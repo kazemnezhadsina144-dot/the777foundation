@@ -1,0 +1,23 @@
+<header class="nav">
+  <div class="nav-inner">
+    <!-- لوگو و اسم 777 -->
+    <div class="nav-left">
+      ...
+    </div>
+
+    <!-- این قسمت میشه ناوبری (منو) -->
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#approach">Approach</a>
+      <a href="#trust">Structure</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- دکمه‌های سمت راست مثل Donate / Get involved -->
+    <div class="nav-right">
+      <a href="#get-involved" class="btn btn-outline">Get involved</a>
+      <a href="#donate" class="btn btn-primary">Support</a>
+    </div>
+  </div>
+</header>
