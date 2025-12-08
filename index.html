@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>The 777 Foundation – Dignity. Justice. Newcomers.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The 777 Foundation is a modern non-profit in Vancouver, BC supporting newcomers and workers through emotional safety, legal awareness, and story-driven systemic change." />
   <style>
     :root {
       --bg: #050814;
@@ -46,6 +47,8 @@
       flex-direction: column;
     }
 
+    /* NAV */
+
     .nav {
       position: sticky;
       top: 0;
@@ -53,8 +56,8 @@
       backdrop-filter: blur(16px);
       background: linear-gradient(
         to bottom,
-        rgba(5, 8, 20, 0.94),
-        rgba(5, 8, 20, 0.6)
+        rgba(5, 8, 20, 0.96),
+        rgba(5, 8, 20, 0.7)
       );
       border-bottom: 1px solid var(--border-soft);
     }
@@ -62,40 +65,40 @@
     .nav-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 12px 20px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
     }
 
-    .nav-logo {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
     .logo-mark {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffffff 0, #f5c153 18%, #8f5b11 52%, #050814 100%);
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #f5c153 20%, #8f5b11 55%, #050814 100%);
       box-shadow: 0 0 40px rgba(245,193,83,0.45);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
     }
 
-    .logo-text-main {
+    .logo-main {
       font-weight: 650;
       letter-spacing: 0.06em;
       font-size: 13px;
       text-transform: uppercase;
     }
 
-    .logo-text-sub {
+    .logo-sub {
       font-size: 11px;
       color: var(--muted);
     }
@@ -116,10 +119,27 @@
       color: var(--text);
     }
 
-    .nav-cta {
+    .nav-right {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+    }
+
+    .lang-toggle {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-soft);
+      color: var(--muted);
+      background: rgba(4, 7, 20, 0.9);
+    }
+
+    .lang-toggle span {
+      opacity: 0.5;
+    }
+
+    .lang-toggle strong {
+      opacity: 1;
     }
 
     .btn {
@@ -168,9 +188,11 @@
       padding: 32px 20px;
     }
 
+    /* HERO */
+
     .hero {
-      padding-top: 48px;
-      padding-bottom: 40px;
+      padding-top: 42px;
+      padding-bottom: 36px;
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 32px;
@@ -183,13 +205,13 @@
       gap: 8px;
       padding: 4px 10px;
       border-radius: var(--radius-sm);
-      background: rgba(10, 180, 126, 0.1);
+      background: rgba(10, 180, 126, 0.12);
       border: 1px solid rgba(10, 180, 126, 0.26);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #90f0c3;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .hero-tag-dot {
@@ -203,7 +225,7 @@
     .hero-title {
       font-size: clamp(30px, 4vw, 40px);
       line-height: 1.1;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .hero-highlight {
@@ -214,29 +236,33 @@
       font-size: 14px;
       color: var(--muted);
       max-width: 460px;
+      margin-bottom: 16px;
+    }
+
+    .hero-triple {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
       margin-bottom: 18px;
     }
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
-      margin-bottom: 18px;
-      font-size: 12px;
+    .hero-pill {
+      background: rgba(8, 12, 32, 0.92);
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      padding: 8px 10px;
+      font-size: 11px;
+    }
+
+    .hero-pill-title {
+      font-weight: 600;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+
+    .hero-pill-text {
+      font-size: 11px;
       color: var(--muted);
-    }
-
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.4);
     }
 
     .hero-actions {
@@ -244,7 +270,7 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
 
     .hero-note {
@@ -257,15 +283,18 @@
                   radial-gradient(circle at bottom right, rgba(84,206,255,0.12), transparent 60%);
       border-radius: 24px;
       border: 1px solid var(--border-soft);
-      padding: 18px 18px 16px;
+      padding: 18px;
       box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .hero-card {
-      background: rgba(9,13,32,0.92);
+      background: rgba(9,13,32,0.94);
       border-radius: 18px;
       border: 1px solid var(--border-soft);
-      padding: 16px 16px 14px;
+      padding: 14px 14px 12px;
     }
 
     .hero-card-title {
@@ -273,11 +302,11 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .hero-card-main {
-      font-size: 17px;
+      font-size: 16px;
       margin-bottom: 10px;
     }
 
@@ -285,7 +314,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .pill {
@@ -322,11 +351,25 @@
       color: var(--muted);
     }
 
+    .hero-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 180px;
+    }
+
     .hero-caption {
-      margin-top: 10px;
       font-size: 11px;
       color: var(--muted);
     }
+
+    /* GENERIC SECTION */
 
     .section-title-row {
       display: flex;
@@ -462,7 +505,7 @@
 
     .cta-center {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 18px;
       font-size: 13px;
       color: var(--muted);
     }
@@ -470,6 +513,26 @@
     .cta-center .btn-primary {
       margin-top: 10px;
     }
+
+    /* TRUST / PERSIAN */
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+    }
+
+    .fa-block {
+      direction: rtl;
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.02);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 10px 12px;
+    }
+
+    /* FOOTER */
 
     .footer {
       border-top: 1px solid rgba(255,255,255,0.06);
@@ -496,7 +559,7 @@
     }
 
     @media (max-width: 900px) {
-      .hero, .dual {
+      .hero, .dual, .trust-grid {
         grid-template-columns: minmax(0, 1fr);
       }
       .hero {
@@ -506,7 +569,7 @@
 
     @media (max-width: 720px) {
       .nav-inner {
-        padding: 10px 14px;
+        padding-inline: 14px;
       }
       .nav-links {
         display: none;
@@ -520,6 +583,9 @@
       .cards-3 {
         grid-template-columns: minmax(0, 1fr);
       }
+      .hero-triple {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
@@ -528,20 +594,24 @@
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="nav-logo">
+      <div class="nav-left">
         <div class="logo-mark">777</div>
         <div>
-          <div class="logo-text-main">The 777 Foundation</div>
-          <div class="logo-text-sub">Dignity · Justice · Newcomers</div>
+          <div class="logo-main">The 777 Foundation</div>
+          <div class="logo-sub">Dignity · Justice · Newcomers</div>
         </div>
       </div>
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="#programs">Programs</a>
-        <a href="#get-involved">Get Involved</a>
+        <a href="#get-involved">Get involved</a>
         <a href="#stories">Stories</a>
+        <a href="#trust">Structure</a>
         <a href="#contact">Contact</a>
-      </div>
-      <div class="nav-cta">
+      </nav>
+      <div class="nav-right">
+        <button class="lang-toggle" type="button" title="Persian/English coming soon">
+          <strong>EN</strong> / <span>FA</span>
+        </button>
         <a href="#get-involved" class="btn btn-outline">Volunteer</a>
         <a href="#donate" class="btn btn-primary">Donate</a>
       </div>
@@ -557,51 +627,62 @@
           <span>Modern non-profit · Vancouver, BC</span>
         </div>
         <h1 class="hero-title">
-          A foundation for <span class="hero-highlight">dignity & justice</span> in the real lives of newcomers.
+          A foundation for <span class="hero-highlight">dignity and justice</span> in the lives of newcomers.
         </h1>
         <p class="hero-subtitle">
-          The 777 Foundation supports migrants and workers in Canada through education, legal awareness,
-          mental health, and storytelling – so no one has to fight the system alone.
+          We help migrants and workers in BC document abuse, understand their rights,
+          and find safer paths through the system – with emotional safety, clear language,
+          and story-driven advocacy.
         </p>
-        <div class="hero-meta">
-          <span><span class="dot"></span> Newcomer rights & worker dignity</span>
-          <span><span class="dot"></span> Trauma-aware programs & peer support</span>
-          <span><span class="dot"></span> Story-driven systemic change</span>
+
+        <div class="hero-triple">
+          <div class="hero-pill">
+            <div class="hero-pill-title">Who we serve</div>
+            <div class="hero-pill-text">Newcomers, migrant workers, and vulnerable employees in BC.</div>
+          </div>
+          <div class="hero-pill">
+            <div class="hero-pill-title">What we do</div>
+            <div class="hero-pill-text">Emotional safety circles, legal awareness tools, and story-based systemic work.</div>
+          </div>
+          <div class="hero-pill">
+            <div class="hero-pill-title">Where we work</div>
+            <div class="hero-pill-text">Based in Vancouver · remote-friendly · BC-focused pilots.</div>
+          </div>
         </div>
+
         <div class="hero-actions">
           <a href="#donate" class="btn btn-primary">Support the work</a>
           <a href="#get-involved" class="btn btn-outline">Join as a volunteer</a>
         </div>
         <p class="hero-note">
-          Early-stage non-profit based in Vancouver, BC · Building pilot programs for 2026.
+          Early-stage non-profit society in British Columbia · building pilots for 2026 with a trauma-aware, faith-safe approach.
         </p>
       </div>
 
-      <div class="hero-right">
+      <aside class="hero-right">
         <div class="hero-card">
           <div class="hero-card-title">PROGRAM SNAPSHOT</div>
           <div class="hero-card-main">
-            Three connected programs. One clear mission: human dignity.
+            Three connected programs. One mission: protect human dignity.
           </div>
           <div class="pill-row">
             <div class="pill">Shielded Souls · Emotional & legal safety</div>
-            <div class="pill">Code 777 · Justice & rights in practice</div>
-            <div class="pill">Voice 777 · Art, stories & advocacy</div>
+            <div class="pill">Code 777 · Rights, cases & tools</div>
+            <div class="pill">Voice 777 · Art, stories & campaigns</div>
           </div>
           <div class="hero-card-footer">
-            <div class="hero-chip">
-              ⬤ Pilot phase · 2026
-            </div>
-            <div class="hero-locale">
-              Vancouver · Remote-friendly · BC-focused
-            </div>
+            <div class="hero-chip">⬤ Pilot phase · 2026</div>
+            <div class="hero-locale">Vancouver · remote-friendly · BC-focused</div>
           </div>
         </div>
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=900&q=80" alt="Vancouver community and skyline" loading="lazy" />
+        </div>
         <p class="hero-caption">
-          The 777 Foundation is building a bridge between lived experience, legal systems,
+          The 777 Foundation sits at the bridge between lived experience, legal systems,
           and everyday survival for migrants and vulnerable workers.
         </p>
-      </div>
+      </aside>
     </section>
 
     <!-- PROGRAMS -->
@@ -609,8 +690,8 @@
       <div class="section-title-row">
         <h2 class="section-title">Programs</h2>
         <p class="section-subtitle">
-          Three core streams work together: emotional safety, justice in action, and storytelling that
-          shifts how institutions listen and respond.
+          Emotional safety, justice in practice, and storytelling work together. Each program is small by design,
+          so people stay human – not case numbers.
         </p>
       </div>
       <div class="cards-3">
@@ -618,8 +699,8 @@
           <div class="card-tag">Program · Shielded Souls</div>
           <div class="card-title">Shielded Souls</div>
           <p class="card-body">
-            Trauma-aware support for migrants and workers facing toxic workplaces, wage theft,
-            or systemic neglect – combining peer circles, practical guidance, and curated referrals.
+            Trauma-aware support for migrants and workers facing toxic workplaces, wage theft, or systemic neglect –
+            combining peer circles, grounded information, and curated referrals to existing services.
           </p>
           <div class="card-footer">
             <span class="badge">Pilot cohort · 2026</span>
@@ -631,12 +712,12 @@
           <div class="card-tag">Program · Code 777</div>
           <div class="card-title">Code 777</div>
           <p class="card-body">
-            A living library of rights, real cases, and tools for self-advocacy – turning legal jargon
-            into human language and helping newcomers document, escalate, and protect themselves.
+            A living library of rights, real cases, and tools for self-advocacy – turning legal jargon into human language
+            and helping people document, escalate, and protect themselves across ESB, WSBC, HRT, and more.
           </p>
           <div class="card-footer">
             <span class="badge">Legal awareness</span>
-            <a href="#stories" class="card-link">Read the cases →</a>
+            <a href="#stories" class="card-link">Explore patterns →</a>
           </div>
         </article>
 
@@ -644,8 +725,8 @@
           <div class="card-tag">Program · Voice 777</div>
           <div class="card-title">Voice 777</div>
           <p class="card-body">
-            Storytelling, art, and digital campaigns that centre migrant voices – from workshops and zines
-            to multimedia stories designed to reach policy-makers, media, and community allies.
+            Storytelling, art, and digital campaigns that centre migrant voices – workshops, zines, and multimedia stories
+            designed to reach policy-makers, media, and community allies without exposing individuals.
           </p>
           <div class="card-footer">
             <span class="badge">Story & art lab</span>
@@ -660,49 +741,49 @@
       <div class="section-title-row">
         <h2 class="section-title">Get involved</h2>
         <p class="section-subtitle">
-          This is a small, focused foundation. We move carefully, protect people’s stories, and
-          collaborate with those who share the same standard for dignity and ethics.
+          We keep a small, focused circle of volunteers and allies in law, mental health, design,
+          technology, and community organising – all with a trauma-aware ethic.
         </p>
       </div>
       <div class="dual">
         <div class="panel" id="donate">
           <h3>Support the foundation</h3>
           <p>
-            Early donations help us cover legal research, program design, translation, and small
-            stipends for peer facilitators. We stay lean, transparent, and independent.
+            Early donations help cover legal research, program design, translation, and small stipends for peer facilitators.
+            We stay lean, transparent, and independent from any single institution.
           </p>
           <ul class="list">
-            <li>Seed funding for pilot workshops and circles</li>
-            <li>Building a rights & story library for newcomers</li>
-            <li>Micro-grants to support high-risk cases</li>
+            <li>$50–$100 · print and translate rights guides for newcomers.</li>
+            <li>$250–$500 · host a small circle or workshop with food and materials.</li>
+            <li>$1,000+ · seed a micro-fund for high-risk cases and systemic documentation.</li>
           </ul>
-          <a href="#" class="btn btn-primary">Donate (demo link)</a>
+          <a href="#" class="btn btn-primary">Donate (processing setup)</a>
           <p style="font-size:11px; color:var(--muted); margin-top:8px;">
-            In production, this button will connect to a secure Stripe / PayPal / CanadaHelps page.
+            We are finalising our donation infrastructure (Stripe / PayPal / CanadaHelps). For now,
+            you can email us to discuss support or partnerships.
           </p>
         </div>
 
         <div class="panel">
           <h3>Volunteer & collaborate</h3>
           <p>
-            We are building a small core circle of volunteers and allies in law, mental health,
-            design, technology, and community organizing.
+            We are seeking a small core group of:
           </p>
           <ul class="list">
-            <li>Law / paralegal / policy</li>
-            <li>Therapy / social work / peer support</li>
-            <li>Design / storytelling / media</li>
-            <li>Operations / nonprofit management</li>
+            <li>Lawyers, paralegals, and policy people who care about migrant justice.</li>
+            <li>Therapists, social workers, and peer supporters with trauma-aware practice.</li>
+            <li>Designers, storytellers, and media makers for campaigns and materials.</li>
+            <li>Non-profit operators and administrators who like clean systems.</li>
           </ul>
           <div class="pill-row-soft">
             <span class="pill-soft">Remote & hybrid options</span>
             <span class="pill-soft">BC-based priority</span>
-            <span class="pill-soft">Trauma-informed approach</span>
+            <span class="pill-soft">Trauma-aware & faith-safe</span>
           </div>
           <p style="font-size:12px; color:var(--muted); margin-top:8px;">
-            Send a short note about who you are and how you’d like to help.
+            Tell us who you are, what you bring, and how much capacity you realistically have.
           </p>
-          <a href="#contact" class="card-link">Open contact form →</a>
+          <a href="#contact" class="card-link">Open contact section →</a>
         </div>
       </div>
     </section>
@@ -710,24 +791,56 @@
     <!-- STORIES -->
     <section id="stories" class="section">
       <div class="section-title-row">
-        <h2 class="section-title">Stories & cases</h2>
+        <h2 class="section-title">Stories, cases & Code 777</h2>
         <p class="section-subtitle">
-          We publish a carefully anonymised, trauma-aware version of real cases – not to expose people, but
-          to expose patterns. These stories are the engine for change.
+          We publish carefully anonymised, trauma-aware versions of real cases – not to expose people,
+          but to expose patterns. Those patterns feed Code 777: our way of turning pain into structured learning.
         </p>
       </div>
       <div class="panel">
         <p style="font-size:13px; color:var(--muted); margin-bottom:8px;">
-          This demo page does not list real cases. In the live version, this section will link to:
+          In the public version of Code 777, we:
         </p>
         <ul class="list">
-          <li>Short narratives about work, housing, and service-provider experiences</li>
-          <li>Plain-language breakdowns of processes (ESB, WSBC, HRT, Ombudsperson, immigration)</li>
-          <li>Resources for community organizations and advocates</li>
+          <li>Describe real experiences in plain language, with all identifiers removed.</li>
+          <li>Map each case against processes like ESB, WSBC, HRT, Ombudsperson, and immigration.</li>
+          <li>Extract patterns: where systems protect people – and where they silently fail.</li>
         </ul>
         <p style="font-size:12px; color:var(--muted); margin-top:4px;">
-          For safety, we never share identifying details without explicit consent and layered protection.
+          Case publishing is paused while we build safety, consent, and governance layers.
+          Until then, we focus on internal pattern-tracking and education.
         </p>
+      </div>
+    </section>
+
+    <!-- TRUST & STRUCTURE -->
+    <section id="trust" class="section">
+      <div class="section-title-row">
+        <h2 class="section-title">Trust, structure & language</h2>
+        <p class="section-subtitle">
+          We are building slowly and deliberately: legally grounded, ethics-driven, and transparent about what we can and cannot do.
+        </p>
+      </div>
+      <div class="trust-grid">
+        <div class="panel">
+          <h3>How we’re structured</h3>
+          <ul class="list">
+            <li>Registered as a non-profit society in British Columbia (The 777 Foundation Society).</li>
+            <li>Based in Vancouver, BC – piloting programs with a focus on newcomers and workers.</li>
+            <li>Independent from political parties and tied to no single employer, union, or agency.</li>
+            <li>Committed to trauma-aware, faith-safe, and culturally sensitive practice.</li>
+          </ul>
+          <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+            As we grow, we will publish our board structure, policies, and annual impact notes here.
+          </p>
+        </div>
+        <div class="fa-block">
+          <strong>به زبان ساده برای فارسی‌زبان‌ها:</strong><br/>
+          777 یک نهاد خیریه/مدرن در ونکوور است که می‌خواهد تجربه‌های واقعی مهاجران و کارگران را
+          به زبان قابل‌فهم، آموزش حقوقی و حمایت انسانی تبدیل کند؛ نه دادگاهِ فوری است، نه خط بحران.
+          اگر درگیر سیستم‌ها هستید و احساس می‌کنید تنها مانده‌اید، هدف ما این است که حداقل
+          «زبان، نقشه و همراهی انسانی» کنار شما باشد.
+        </div>
       </div>
     </section>
 
@@ -736,39 +849,44 @@
       <div class="section-title-row">
         <h2 class="section-title">Contact</h2>
         <p class="section-subtitle">
-          If you’re a newcomer, worker, ally, or organisation that wants to collaborate, this is the best way
+          If you’re a newcomer, worker, ally, or organisation that wants to collaborate, this is the safest way
           to reach the 777 Foundation during the pilot phase.
         </p>
       </div>
       <div class="dual">
         <div class="panel">
-          <h3>Reach out</h3>
+          <h3>First contact</h3>
           <p>
-            For now, we use a simple email-first contact. In the next phase, this will be replaced
-            with a secure intake form for cases, volunteers, and partners.
+            For now, we use an email-first intake. In your first message, please
+            <strong>do not include names, addresses, or employer details</strong>.
+            Share a short description of your situation or the kind of collaboration you’re seeking.
           </p>
           <p style="font-size:13px; margin-top:8px;">
-            Email: <a href="mailto:contact@the777foundation.org">contact@the777foundation.org</a><br/>
+            Email: <a href="mailto:contact@the777foundation.org?subject=The%20777%20Foundation%20%2D%20Contact%20inquiry">contact@the777foundation.org</a><br/>
             City: Vancouver, British Columbia, Canada
+          </p>
+          <p style="font-size:11px; color:var(--muted); margin-top:8px;">
+            We are not an emergency or crisis service. If you are in immediate danger, please contact local emergency lines
+            or crisis support in your region first.
           </p>
         </div>
         <div class="panel">
-          <h3>Demo form (not wired)</h3>
+          <h3>Short interest form</h3>
           <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">
-            This is a visual placeholder. In production, it will submit to your backend, Airtable, or a secure intake tool.
+            You can also send a short interest note here. Your answers will open your email app with a
+            pre-filled message to our inbox.
           </p>
-          <form>
+          <form id="contact-form">
             <div style="display:flex; flex-direction:column; gap:8px; font-size:12px;">
-              <input type="text" placeholder="Name" style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--text);" />
-              <input type="email" placeholder="Email" style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--text);" />
-              <select style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--muted);">
-                <option>I’m a newcomer / worker</option>
-                <option>I want to volunteer</option>
-                <option>I represent an organisation</option>
-                <option>Other</option>
+              <input type="text" id="name" placeholder="Name (optional or first name only)" style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--text);" />
+              <select id="role" style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--muted);">
+                <option value="Newcomer / worker">I’m a newcomer / worker</option>
+                <option value="Volunteer / ally">I want to volunteer / collaborate</option>
+                <option value="Organisation / funder">I represent an organisation / funder</option>
+                <option value="Other">Other</option>
               </select>
-              <textarea rows="3" placeholder="Short message (optional)" style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--text); resize:vertical;"></textarea>
-              <button type="button" class="btn btn-outline">Submit (demo only)</button>
+              <textarea id="message" rows="3" placeholder="Very short note (no names, addresses, or employer details here)" style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--text); resize:vertical;"></textarea>
+              <button type="submit" class="btn btn-outline">Prepare email</button>
             </div>
           </form>
         </div>
@@ -783,15 +901,37 @@
         © <span id="year"></span> The 777 Foundation Society · Vancouver, BC · All rights reserved.
       </div>
       <div class="footer-links">
-        <span>Non-profit · Early pilot stage</span>
-        <span>Built as a demo landing page</span>
+        <span>Non-profit society · Early pilot stage</span>
+        <span>Built as a public demo landing page</span>
       </div>
     </div>
   </footer>
 </div>
 
 <script>
+  // year
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // simple mailto builder
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("name").value.trim();
+    var role = document.getElementById("role").value;
+    var msg  = document.getElementById("message").value.trim();
+
+    var subject = "The 777 Foundation – " + role;
+    var bodyParts = [];
+
+    if (name) bodyParts.push("Name: " + name);
+    bodyParts.push("Role: " + role);
+    if (msg) bodyParts.push("\nShort note:\n" + msg);
+
+    bodyParts.push("\n(Please remember: do not include full names, addresses, or employer details in this first email.)");
+
+    var body = encodeURIComponent(bodyParts.join("\n"));
+    var mailto = "mailto:contact@the777foundation.org?subject=" + encodeURIComponent(subject) + "&body=" + body;
+    window.location.href = mailto;
+  });
 </script>
 </body>
 </html>
