@@ -1,246 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
   <title>The 777 Foundation Society – Survivor-led support for newcomers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The 777 Foundation Society is a grassroots, survivor-led non-profit in British Columbia, Canada. We create trauma-informed, peer-led spaces, rights navigation, resilience programs, and community outreach for newcomers and marginalized workers." />
+  <meta name="description" content="A grassroots, survivor-led non-profit in British Columbia delivering peer-led programs, advocacy orientation, resilience activities, and outreach for newcomers and marginalized workers." />
   <meta property="og:title" content="The 777 Foundation Society" />
-  <meta property="og:description" content="Survivor-led, trauma-informed support and rights navigation for newcomers and marginalized workers in BC." />
+  <meta property="og:description" content="Survivor-led, trauma-informed support and advocacy orientation for newcomers and marginalized workers in BC." />
+  <!-- shared head -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050814" />
+  <link rel="manifest" href="/assets/site.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/favicon-512.png" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og/og-777.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="/assets/777-shell.css" />
+  <script src="/assets/777-shell.js" defer></script>
 </head>
 <body>
-<div class="page">
-  <div class="orbits"><div class="orbit o1"></div><div class="orbit o2"></div></div>
+  <div class="page">
+    <div class="orbits"><div class="orbit o1"></div><div class="orbit o2"></div></div>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="nav-inner">
-      <div class="nav-left">
-        <a class="logo-mark" href="index.html" aria-label="Home">777</a>
+    <div id="site-header"></div>
+
+    <main id="main">
+      <section class="section hero">
         <div>
-          <div class="logo-main">The 777 Foundation Society</div>
-          <div class="logo-sub">Grassroots · Survivor-led · BC</div>
-        </div>
-      </div>
+          <div class="hero-tag"><span class="hero-tag-dot"></span><span>Survivor-led non-profit · British Columbia</span></div>
+          <h1 class="hero-title">
+            A grassroots foundation for <span class="hero-highlight">dignity and justice</span>
+            in the lives of newcomers and marginalized workers.
+          </h1>
+          <p class="hero-subtitle">
+            We design and deliver peer-led programs, advocacy orientation, emotional resilience activities, and outreach initiatives
+            for individuals navigating unsafe, exploitative, or exclusionary conditions.
+          </p>
 
-      <nav class="nav-links" data-nav>
-        <a href="index.html">Home</a>
-        <a href="programs.html">Programs</a>
-        <a href="get-involved.html">Get involved</a>
-        <a href="governance.html">Governance</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="nav-right">
-        <button id="burger" class="burger" aria-label="Open menu" aria-expanded="false">☰</button>
-        <a href="get-involved.html" class="btn btn-outline">Volunteer</a>
-        <a href="donate.html" class="btn btn-primary">Donate</a>
-      </div>
-    </div>
-
-    <div id="mobileNav" class="mobile-nav" data-nav>
-      <a href="index.html">Home</a>
-      <a href="programs.html">Programs</a>
-      <a href="get-involved.html">Get involved</a>
-      <a href="governance.html">Governance</a>
-      <a href="contact.html">Contact</a>
-      <a href="donate.html">Donate</a>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="section hero">
-      <div>
-        <div class="hero-tag"><span class="hero-tag-dot"></span><span>Survivor-led non-profit · British Columbia</span></div>
-        <h1 class="hero-title">
-          A grassroots foundation for <span class="hero-highlight">dignity, safety, and justice</span> for newcomers and marginalized workers.
-        </h1>
-        <p class="hero-subtitle">
-          We provide trauma-informed, peer-led support and rights navigation for people facing exploitation, exclusion,
-          and system stress. Our focus is practical: stabilise, document, understand options, and move forward safely.
-        </p>
-
-        <div class="hero-actions">
-          <a href="programs.html" class="btn btn-primary">View programs</a>
-          <a href="get-involved.html" class="btn btn-outline">Volunteer / collaborate</a>
-          <a href="donate.html" class="btn btn-outline">Funding / grants</a>
-        </div>
-
-        <p class="hero-note">
-          Pilot-phase Society in British Columbia · building capacity for 2026 programs and partnerships.
-        </p>
-
-        <div class="dual" style="margin-top:14px;">
-          <div class="panel">
-            <h3>Who we serve</h3>
-            <ul class="list">
-              <li>Newcomers and migrant workers navigating unsafe or exploitative conditions.</li>
-              <li>People experiencing rights confusion, retaliation fears, or isolation while seeking help.</li>
-              <li>Individuals interacting with complaint systems (employment, human rights, compensation, etc.).</li>
-            </ul>
-          </div>
-          <div class="panel">
-            <h3>What we do (in plain language)</h3>
-            <ul class="list">
-              <li>Peer-led groups with boundaries and facilitation (not unstructured disclosure).</li>
-              <li>Rights navigation and documentation readiness (not legal representation).</li>
-              <li>Resilience tools to reduce isolation and improve coping during system processes.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <aside class="hero-right">
-        <div class="hero-right-inner">
-          <div class="hero-card">
-            <div class="hero-card-title">PILOT MODEL</div>
-            <div class="hero-card-main">
-              Small cohorts → structured intake → clear scope → safe referrals → pattern-level learning.
+          <div class="hero-triple">
+            <div class="hero-pill">
+              <div class="hero-pill-title">Programs</div>
+              <div class="hero-pill-text">Peer-led groups, advocacy orientation, resilience tools, and community outreach.</div>
             </div>
-            <div class="pill-row">
-              <div class="pill">Trauma-informed</div>
-              <div class="pill">Privacy-first</div>
-              <div class="pill">Peer-led facilitation</div>
-              <div class="pill">Rights navigation</div>
+            <div class="hero-pill">
+              <div class="hero-pill-title">Governance</div>
+              <div class="hero-pill-text">Volunteer board oversight with privacy-conscious, trauma-informed safeguards.</div>
             </div>
-            <div class="hero-card-footer">
-              <div class="hero-chip">⬤ BC-focused · Remote-friendly</div>
-              <div>Vancouver, BC</div>
+            <div class="hero-pill">
+              <div class="hero-pill-title">Scope</div>
+              <div class="hero-pill-text">Information and support—no legal representation, no crisis response.</div>
             </div>
           </div>
 
-          <div class="hero-photo">
-            <img
-              src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80"
-              alt="Vancouver skyline and community by the water"
-              loading="lazy"
-            />
+          <div class="hero-actions">
+            <a href="/donate/" class="btn btn-primary">Funding & donate</a>
+            <a href="/get-involved/" class="btn btn-outline">Volunteer / collaborate</a>
           </div>
 
-          <p class="hero-caption">
-            Our work complements existing legal, settlement, and health services by improving readiness, clarity, and safety.
-          </p>
-        </div>
-      </aside>
-    </section>
+          <p class="hero-note">Pilot-phase organisation · building capacity and partnerships for 2026.</p>
 
-    <!-- WHAT MAKES US DIFFERENT -->
-    <section class="section">
-      <div class="section-title-row">
-        <h2 class="section-title">How we’re different</h2>
-        <p class="section-subtitle">
-          Designed to be useful in real life: clear scope, safe process, and practical outputs.
-        </p>
-      </div>
-
-      <div class="cards-3">
-        <article class="card">
-          <div class="card-tag">Process</div>
-          <div class="card-title"><span class="card-icon">🧭</span> Navigation, not noise</div>
-          <p class="card-body">
-            We help participants organise timelines, documents, and options so interactions with institutions are safer and clearer.
-          </p>
-          <div class="card-footer"><span class="badge">Readiness focus</span><a class="card-link" href="programs.html">Programs →</a></div>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">Safety</div>
-          <div class="card-title"><span class="card-icon">🛡️</span> Boundaries and safeguarding</div>
-          <p class="card-body">
-            Groups are facilitated with explicit boundaries. We avoid sensationalising stories and prioritise privacy and consent.
-          </p>
-          <div class="card-footer"><span class="badge">Privacy-first</span><a class="card-link" href="governance.html">Safeguards →</a></div>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">Impact</div>
-          <div class="card-title"><span class="card-icon">📎</span> Practical outputs</div>
-          <p class="card-body">
-            Participants leave with clearer next steps, documentation readiness, and referral pathways—measurable, not vague.
-          </p>
-          <div class="card-footer"><span class="badge">Outcome-oriented</span><a class="card-link" href="get-involved.html">Support us →</a></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PILOT IMPACT METRICS -->
-    <section class="section">
-      <div class="section-title-row">
-        <h2 class="section-title">Pilot measures (what we track)</h2>
-        <p class="section-subtitle">
-          Early-stage measurement focuses on safety, stabilisation, and readiness (not inflated claims).
-        </p>
-      </div>
-
-      <div class="dual">
-        <div class="panel">
-          <h3>Participant outcomes</h3>
-          <ul class="list">
-            <li>Clarity: participant can describe options and next steps in plain language.</li>
-            <li>Readiness: basic documentation and timeline organised for external support.</li>
-            <li>Connection: reduced isolation via safe peer network and referrals.</li>
-            <li>Stability: basic coping plan for system stress (sleep, routines, supports).</li>
-          </ul>
-          <div class="pill-row-soft">
-            <span class="pill-soft">Intake → check-in → exit review</span>
-            <span class="pill-soft">Aggregated reporting</span>
-            <span class="pill-soft">No public case details</span>
+          <div class="hero-stats">
+            <div class="hero-stat"><span>4</span><span>program streams</span></div>
+            <div class="hero-stat"><span>BC-focused</span><span>remote-friendly options</span></div>
+            <div class="hero-stat"><span>Privacy-first</span><span>email-first intake</span></div>
           </div>
         </div>
 
-        <div class="panel">
-          <h3>System learning</h3>
-          <ul class="list">
-            <li>Recurring barriers and “drop-off points” across service pathways.</li>
-            <li>Patterns of harm and confusion (de-identified and aggregated).</li>
-            <li>Which referrals actually work (time, accessibility, outcomes).</li>
-          </ul>
-          <p style="font-size:12px; color:var(--muted);">
-            Findings inform outreach and partner conversations without exposing individuals.
-          </p>
+        <aside class="hero-right">
+          <div class="hero-right-inner">
+            <div class="hero-card">
+              <div class="hero-card-title">START HERE</div>
+              <div class="hero-card-main">Choose the path that matches your need. We route requests safely and quickly.</div>
+              <div class="pill-row">
+                <div class="pill">I need support</div>
+                <div class="pill">I want to volunteer</div>
+                <div class="pill">I’m a funder</div>
+                <div class="pill">I’m an org partner</div>
+              </div>
+              <div class="hero-card-footer">
+                <div class="hero-chip">⬤ Trauma-informed</div>
+                <div class="hero-locale">Vancouver · BC</div>
+              </div>
+            </div>
+
+            <div class="hero-photo">
+              <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1000&q=80"
+                   alt="Vancouver skyline and community by the water" loading="lazy" />
+            </div>
+
+            <p class="hero-caption">
+              For detailed information, visit Programs, Governance, Scope, and Contact pages.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section">
+        <div class="section-title-row">
+          <h2 class="section-title">Quick links</h2>
+          <p class="section-subtitle">Direct access to the main pages.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- CTA STRIP -->
-    <section class="section">
-      <div class="dual">
-        <div class="panel">
-          <h3>Are you a funder or partner?</h3>
-          <p>
-            We’re building pilot capacity for 2026. We welcome aligned funders, legal/community partners, and operational allies.
-          </p>
-          <a class="btn btn-primary" href="donate.html">Funding priorities</a>
-          <a class="btn btn-outline" href="contact.html" style="margin-left:8px;">Contact</a>
+        <div class="cards-4">
+          <article class="card">
+            <div class="card-tag">Programs</div>
+            <div class="card-title">What we deliver</div>
+            <p class="card-body">Four coordinated streams for stabilisation, navigation, resilience, and outreach.</p>
+            <div class="card-footer"><span class="badge">Program design</span><a class="card-link" href="/programs/">Open →</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Get involved</div>
+            <div class="card-title">Volunteer / collaborate</div>
+            <p class="card-body">Advisors, facilitators, allies, and operational support—small time commitments.</p>
+            <div class="card-footer"><span class="badge">2–4 hrs / month</span><a class="card-link" href="/get-involved/">Open →</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Donate</div>
+            <div class="card-title">Funding priorities</div>
+            <p class="card-body">Pilot infrastructure, participant supports, translation, materials, and evaluation.</p>
+            <div class="card-footer"><span class="badge">Pilot phase</span><a class="card-link" href="/donate/">Open →</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Contact</div>
+            <div class="card-title">Email-first intake</div>
+            <p class="card-body">Privacy-first routing for support, partnership, or funding enquiries.</p>
+            <div class="card-footer"><span class="badge">Privacy-first</span><a class="card-link" href="/contact/">Open →</a></div>
+          </article>
         </div>
+      </section>
+    </main>
 
-        <div class="panel">
-          <h3>Do you want to volunteer?</h3>
-          <p>
-            We’re forming a small cohort of volunteer and professional allies (2–4 hours/month) with a stable, safe process.
-          </p>
-          <a class="btn btn-outline" href="get-involved.html">Volunteer roles</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div>© <span id="year"></span> The 777 Foundation Society · Vancouver, BC · All rights reserved.</div>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <span>Grassroots, survivor-led non-profit</span>
-        <span>Pilot-phase outreach and partnerships</span>
-      </div>
-    </div>
-  </footer>
-</div>
-
-<script src="/assets/777-shell.js"></script>
+    <div id="site-footer"></div>
+  </div>
 </body>
 </html>
