@@ -1,68 +1,476 @@
-<!DOCTYPE html>
+<!-- /get-involved/index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Get involved – The 777 Foundation Society</title>
-  <meta name="description" content="Volunteer roles, allies, and collaboration pathways with clear scope and privacy-first culture." />
+
+  <title>Get involved | The 777 Foundation Society</title>
+  <meta name="description" content="Volunteer or collaborate with The 777 Foundation Society. Join a survivor-led, trauma-informed non-profit in British Columbia building peer-led programs, advocacy orientation, resilience practices, and privacy-first outreach." />
+
   <link rel="canonical" href="https://www.the777foundation.org/get-involved/" />
-  <meta property="og:site_name" content="The 777 Foundation Society" />
-  <meta property="og:title" content="Get involved – The 777 Foundation Society" />
-  <meta property="og:description" content="Defined roles with clear scope. Remote-friendly. Privacy-first culture." />
+  <meta property="og:title" content="Get involved | The 777 Foundation Society" />
+  <meta property="og:description" content="Volunteer or collaborate. Early pilot + capacity-building roles (2–4 hours/month). Funding & partnerships, legal/policy, mental health allies, outreach, and operations." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.the777foundation.org/get-involved/" />
   <meta property="og:image" content="https://www.the777foundation.org/assets/og/og-777.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#050814" />
-  <link rel="manifest" href="/assets/site.webmanifest" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/favicon-512.png" />
-  <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon-192.png" />
-  <link rel="stylesheet" href="/assets/777-shell.css" />
-</head>
-<body>
-  <div class="page">
-    <div id="site-header"></div>
 
-    <main id="main">
-      <section class="section">
-        <div class="container hero">
-          <div>
-            <div class="kicker"><span class="kdot"></span><span>Volunteers · allies · partners</span></div>
-            <h1>Help build a <span style="color:var(--gold)">safe, useful</span> support layer.</h1>
-            <p class="lead">Defined roles with clear scope. Typical commitment: 2–4 hours/month (remote-friendly).</p>
-            <div class="nav__actions" style="margin-top:14px">
-              <a class="btn btn--primary" href="/contact/">Express interest</a>
-              <a class="btn btn--ghost" href="/governance/">Safeguards</a>
+  <link rel="stylesheet" href="/assets/777-shell.css?v=2025-12-14" />
+
+  <style>
+    /* Page-only (kept minimal; relies on 777-shell.css for core tokens/layout) */
+    .hero-slim { padding-top: 18px; padding-bottom: 14px; }
+    .lede { max-width: 860px; }
+    .grid { display: grid; gap: 14px; }
+    .grid.cards { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    .card { background: var(--card, rgba(16,20,38,0.9)); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 14px; }
+    .muted { color: var(--muted, rgba(255,255,255,0.70)); }
+    .kicker { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted, rgba(255,255,255,0.70)); }
+    .h2 { font-size: 18px; margin: 0 0 8px; }
+    .h3 { font-size: 15px; margin: 0 0 8px; }
+    .pillrow { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); color: var(--muted, rgba(255,255,255,0.70)); }
+
+    .list { margin: 0; padding-left: 18px; color: var(--muted, rgba(255,255,255,0.72)); }
+    .list li { margin: 6px 0; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 14px; border-radius: 999px; border: 1px solid transparent; text-decoration: none; cursor: pointer; font-size: 13px; }
+    .btn-primary { background: linear-gradient(135deg, #f5c153, #f0a72a); color: #1a1307; font-weight: 650; box-shadow: 0 12px 30px rgba(245,193,83,0.35); }
+    .btn-outline { border-color: rgba(255,255,255,0.12); background: rgba(10,14,32,0.75); color: rgba(255,255,255,0.78); }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.22); }
+
+    details { border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; background: rgba(255,255,255,0.02); padding: 12px 12px; }
+    summary { cursor: pointer; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    .summary-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .caret { opacity: 0.85; }
+
+    .form-row { display: grid; gap: 10px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+    .field { grid-column: span 6; }
+    .field.full { grid-column: span 12; }
+    .input, .select, .textarea {
+      width: 100%;
+      padding: 10px 11px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(5,8,20,0.75);
+      color: rgba(255,255,255,0.92);
+      font-size: 13px;
+      outline: none;
+    }
+    .textarea { resize: vertical; min-height: 110px; }
+
+    @media (max-width: 920px) {
+      .col-6, .col-4, .col-8 { grid-column: span 12; }
+      .field { grid-column: span 12; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header injected by /assets/777-shell.js -->
+  <div id="site-header" data-active="/get-involved/"></div>
+
+  <main class="section">
+    <!-- HERO -->
+    <section class="hero-slim">
+      <div class="kicker">Get involved • Volunteer • Collaborate</div>
+      <h1 style="margin:6px 0 8px; font-size: clamp(28px, 4vw, 38px); line-height: 1.12;">
+        Volunteer & collaborate with The 777 Foundation Society
+      </h1>
+      <p class="muted lede" style="font-size: 14px; margin-top: 8px;">
+        The Society is a survivor-led, trauma-informed non-profit in British Columbia building peer-led support networks,
+        advocacy orientation (not legal representation), resilience practices, and privacy-first outreach.
+        Current focus is early pilot + capacity-building with a small, stable cohort of volunteers and professional allies.
+      </p>
+
+      <div class="pillrow" style="margin-top: 12px;">
+        <span class="pill">2–4 hours / month</span>
+        <span class="pill">Remote-friendly</span>
+        <span class="pill">BC-based preferred</span>
+        <span class="pill">Dignity-first • privacy-first</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#interest">Express interest</a>
+        <a class="btn btn-outline" href="/donate/">Support with funding</a>
+        <a class="btn btn-outline" href="/programs/">View program streams</a>
+      </div>
+
+      <p class="muted" style="font-size: 12px; margin-top: 10px;">
+        Note: This is not an emergency or crisis service. If there is immediate danger or acute distress, contact emergency services first.
+      </p>
+    </section>
+
+    <!-- PATHWAYS -->
+    <section style="margin-top: 22px;">
+      <div class="grid" style="gap: 10px; margin-bottom: 12px;">
+        <div>
+          <h2 class="h2">Volunteer & collaboration pathways</h2>
+          <p class="muted" style="font-size: 13px; max-width: 920px;">
+            Focused roles designed for consistency and safety. Most contributions are small and steady, with clear boundaries and realistic scope.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid cards">
+        <article class="card col-4">
+          <div class="kicker">Priority role</div>
+          <h3 class="h3">Funding, Grants & Partnerships</h3>
+          <p class="muted" style="font-size: 13px;">
+            Channel aligned funding, grants, and partnerships into the Society to build stable programs and infrastructure.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Connector</span><span class="pill">Pipeline</span><span class="pill">LOIs</span>
+          </div>
+          <div class="actions" style="margin-top: 10px;">
+            <a class="btn btn-outline" href="#featured-funding">Featured role</a>
+          </div>
+        </article>
+
+        <article class="card col-4">
+          <div class="kicker">Professional allies</div>
+          <h3 class="h3">Legal, Policy & Advocacy Allies</h3>
+          <p class="muted" style="font-size: 13px;">
+            Advise on navigation frameworks for employment standards, workers’ compensation, human rights, and related processes (no representation).
+          </p>
+          <div class="pillrow">
+            <span class="pill">Plain-language</span><span class="pill">Readiness</span><span class="pill">Boundaries</span>
+          </div>
+        </article>
+
+        <article class="card col-4">
+          <div class="kicker">Professional allies</div>
+          <h3 class="h3">Mental Health & Social Service Allies</h3>
+          <p class="muted" style="font-size: 13px;">
+            Support trauma-informed, culturally responsive practice and clear referral pathways (not clinical delivery inside the Society).
+          </p>
+          <div class="pillrow">
+            <span class="pill">Trauma-informed</span><span class="pill">Safeguarding</span><span class="pill">Referrals</span>
+          </div>
+        </article>
+
+        <article class="card col-6">
+          <div class="kicker">Outreach</div>
+          <h3 class="h3">Community Organisers, Designers & Storytellers</h3>
+          <p class="muted" style="font-size: 13px;">
+            Support outreach and education materials that highlight systemic patterns while protecting identities and consent.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Privacy-first</span><span class="pill">Campaigns</span><span class="pill">Education</span>
+          </div>
+        </article>
+
+        <article class="card col-6">
+          <div class="kicker">Operations</div>
+          <h3 class="h3">Non-profit Operations & Governance Support</h3>
+          <p class="muted" style="font-size: 13px;">
+            Strengthen early-stage infrastructure: policies, evaluation, reporting, and board-level tools.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Policies</span><span class="pill">Reporting</span><span class="pill">Board tools</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURED ROLE -->
+    <section id="featured-funding" style="margin-top: 22px;">
+      <div class="grid cards">
+        <article class="card col-8">
+          <div class="kicker">Featured role (volunteer/advisory)</div>
+          <h2 class="h2" style="margin-top: 4px;">Funding, Grants & Partnerships Steward</h2>
+          <p class="muted" style="font-size: 13px;">
+            Purpose: open and stabilise the resource flow into The 777 Foundation Society. Translate the survivor-led mandate into concrete funding,
+            grant, and partnership opportunities, and build bridges so aligned institutions and donors can support the work in a clean, structured way.
+          </p>
+
+          <div class="pillrow" style="margin-top: 10px;">
+            <span class="pill">2–4 hrs / month to start</span>
+            <span class="pill">Remote-friendly</span>
+            <span class="pill">Outcomes > activity</span>
+          </div>
+
+          <div class="grid" style="margin-top: 14px; gap: 12px;">
+            <div class="card" style="background: rgba(255,255,255,0.015);">
+              <h3 class="h3">What this role focuses on</h3>
+              <ul class="list">
+                <li>Identify aligned pathways (grants, community foundations, municipal/provincial/federal programs, select philanthropy) that match mandate and scale.</li>
+                <li>Prioritise a small number of high-fit opportunities instead of chasing everything.</li>
+                <li>Act as connector/translator between survivor-led mandate and funder language (LOIs, concept notes, short applications).</li>
+                <li>Coordinate with the core team to keep proposals realistic for current capacity and dignity-first delivery.</li>
+                <li>Where appropriate, support early-stage partnership conversations with community organisations, clinics, advocacy groups, and educational institutions.</li>
+              </ul>
+            </div>
+
+            <div class="card" style="background: rgba(255,255,255,0.015);">
+              <h3 class="h3">What this role is not</h3>
+              <ul class="list">
+                <li>Not a solo fundraiser expected to “bring in money” without structure or support.</li>
+                <li>Not responsible for legal or financial sign-off.</li>
+                <li>Not a public spokesperson required to share lived-experience details.</li>
+                <li>Not a crisis-response or frontline counselling role.</li>
+              </ul>
             </div>
           </div>
 
-          <aside class="panel">
-            <div class="tag">Culture</div>
-            <ul class="ul">
-              <li>Confidentiality and privacy discipline</li>
-              <li>No pressure volunteering</li>
-              <li>Scope clarity: support & routing, not case ownership</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
+          <div class="actions" style="margin-top: 12px;">
+            <a class="btn btn-primary" href="#interest" aria-label="Express interest in funding and partnerships role">Express interest</a>
+            <a class="btn btn-outline" href="/contact/">General contact</a>
+          </div>
+        </article>
 
-      <section class="section--sm">
-        <div class="container">
-          <div class="grid3">
-            <div class="card"><div class="tag">Ops</div><div class="ctitle">Cohort Coordinator</div><div class="cbody">Scheduling, reminders, attendance tracking, and logistics.</div></div>
-            <div class="card"><div class="tag">Review</div><div class="ctitle">Advisor (Legal/Policy/Systems)</div><div class="cbody">Template review for clarity/safety. No legal representation.</div></div>
-            <div class="card"><div class="tag">Content</div><div class="ctitle">Plain-language Editor</div><div class="cbody">Make materials readable, culturally aware, and non-triggering.</div></div>
+        <aside class="card col-4">
+          <div class="kicker">Fit + support</div>
+          <h3 class="h3">Who this fits best</h3>
+          <ul class="list">
+            <li>Experience in nonprofit management, grants, fundraising, social finance, or partnerships (nice-to-have, not mandatory).</li>
+            <li>Comfort reading guidelines and quickly spotting fit/misfit.</li>
+            <li>Preference for small, focused teams over bureaucracy.</li>
+            <li>Ability to offer steady time rather than intense bursts.</li>
+          </ul>
+
+          <h3 class="h3" style="margin-top: 12px;">How the Society supports you</h3>
+          <ul class="list">
+            <li>Written briefing on mandate, program streams, and current priorities.</li>
+            <li>A single point of contact for coordination and decisions.</li>
+            <li>Templates: concept notes, basic budgets, program descriptions.</li>
+            <li>Respect for boundaries and realistic capacity.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ROLE BRIEF (EXPANDABLE) -->
+    <section style="margin-top: 18px;">
+      <details>
+        <summary>
+          <div class="summary-row">
+            <div>
+              <div class="kicker">Optional</div>
+              <div class="h3" style="margin: 2px 0 0;">Full role brief: Funding & Partnerships Lead (evolves from Steward)</div>
+              <div class="muted" style="font-size: 12px; margin-top: 4px;">
+                Expanded brief for a more operator-level candidate (pipeline ownership, funder relationship handling, and proposal shaping).
+              </div>
+            </div>
+            <div class="caret">▾</div>
+          </div>
+        </summary>
+
+        <div style="margin-top: 12px;">
+          <div class="card" style="background: rgba(255,255,255,0.015);">
+            <div class="kicker">Organisation</div>
+            <p class="muted" style="font-size: 13px;">
+              The 777 Foundation Society — emerging non-profit society based in British Columbia, Canada.
+              Mission: protect dignity and create long-term opportunity for people navigating vulnerable transitions, especially newcomers and workers under high economic or psychological pressure.
+            </p>
+
+            <div class="kicker" style="margin-top: 10px;">Role summary</div>
+            <p class="muted" style="font-size: 13px;">
+              This is not a general grant-search role. The Funding & Partnerships Lead owns a small, serious pipeline and turns the Society’s mandate into fundable offers and clean partnerships,
+              while the founder remains in the architect/strategy role.
+            </p>
+
+            <div class="kicker" style="margin-top: 10px;">What you will own</div>
+            <ul class="list">
+              <li>Design and manage a realistic funding pipeline (prioritised opportunities with clear stages and next actions).</li>
+              <li>Initiate and manage external relationships (funders, institutions, aligned partners) through to clear outcomes (yes/no/later).</li>
+              <li>Translate program intent into fundable concepts (LOIs, short proposals), coordinating with the core team for feasibility and dignity-first delivery.</li>
+              <li>Provide simple reporting: stage, next step, probability, and time-to-decision. Measured on movement and results.</li>
+            </ul>
+
+            <div class="kicker" style="margin-top: 10px;">What success looks like (12 months)</div>
+            <ul class="list">
+              <li>Net new funding secured (illustrative target: CAD 75k–150k) via grants, institutional funders, or aligned major donors.</li>
+              <li>Several concrete wins (illustrative target: 3–6 approved grants/contributions/commitments).</li>
+              <li>Live, realistic pipeline (illustrative: ~10–20 active opportunities with stages: research → contact → proposal → review → decision).</li>
+              <li>Quarterly forward motion: multiple opportunities advance at least one stage per quarter.</li>
+            </ul>
+
+            <div class="kicker" style="margin-top: 10px;">Compensation & structure</div>
+            <p class="muted" style="font-size: 13px;">
+              Phase 1 (3–6 months): lean start (volunteer/advisory or small retainer by agreement) + success-based bonuses tied to funds actually received by the Society.
+              Phase 2: evolves to stable part-time leadership + performance bonus if milestones are achieved and fit is strong.
+            </p>
+
+            <div class="kicker" style="margin-top: 10px;">How we start</div>
+            <ul class="list">
+              <li>Align on scope and a 3–6 month pilot.</li>
+              <li>Pick a small number of priority targets.</li>
+              <li>You lead external motion; core team supports narrative/materials and decisions.</li>
+              <li>Regular check-ins; adjust based on what works in reality.</li>
+            </ul>
           </div>
         </div>
-      </section>
-    </main>
+      </details>
+    </section>
 
-    <div id="site-footer"></div>
-  </div>
+    <!-- HOW IT WORKS -->
+    <section style="margin-top: 18px;">
+      <div class="grid cards">
+        <article class="card col-6">
+          <h2 class="h2">How involvement works</h2>
+          <ol class="list" style="padding-left: 20px;">
+            <li><strong>Short email</strong> (role + interest + realistic availability).</li>
+            <li><strong>Routing</strong> to the right pathway (funding, legal/policy, mental health, outreach, operations).</li>
+            <li><strong>Quick fit check</strong> (asynchronous first; short call only if needed).</li>
+            <li><strong>Start small</strong> with one defined contribution.</li>
+            <li><strong>Review</strong> after 4–8 weeks and adjust scope.</li>
+          </ol>
+          <p class="muted" style="font-size: 12px; margin-top: 10px;">
+            The goal is sustainable contribution without burnout, and without extracting anyone’s story.
+          </p>
+        </article>
 
-  <script src="/assets/777-shell.js"></script>
+        <article class="card col-6">
+          <h2 class="h2">Boundaries and safety</h2>
+          <ul class="list">
+            <li>No crisis-response or emergency service.</li>
+            <li>No legal representation; no clinical therapy delivery.</li>
+            <li>Privacy-first: avoid sensitive identifiers in first contact.</li>
+            <li>Consent-first storytelling: pattern-level outreach, identity-protected.</li>
+            <li>Clear scope protects participants, volunteers, and partners.</li>
+          </ul>
+          <p class="muted" style="font-size: 12px; margin-top: 10px;">
+            Detailed policies are available under <a href="/privacy/" style="text-decoration: underline;">Privacy</a> and <a href="/scope/" style="text-decoration: underline;">Scope</a>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INTEREST FORM -->
+    <section id="interest" style="margin-top: 18px;">
+      <div class="grid cards">
+        <article class="card col-6">
+          <h2 class="h2">Express interest (email-first)</h2>
+          <p class="muted" style="font-size: 13px;">
+            Send a short email to <a href="mailto:contact@the777foundation.org" style="text-decoration: underline;">contact@the777foundation.org</a>.
+            Please avoid full names, addresses, employer identifiers, or case-specific details in the first message.
+          </p>
+
+          <div class="card" style="background: rgba(255,255,255,0.015); margin-top: 12px;">
+            <div class="kicker">Suggested structure</div>
+            <ul class="list">
+              <li>Who you are (1–2 lines: role, location, relevant experience)</li>
+              <li>Why this work matters to you</li>
+              <li>How you imagine contributing (one pathway)</li>
+              <li>Your realistic availability (e.g., ~3 hours/month for 6 months)</li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:contact@the777foundation.org?subject=Volunteer%20%2F%20Collaboration%20%E2%80%93%20The%20777%20Foundation%20Society">Email the Society</a>
+            <a class="btn btn-outline" href="/contact/">Contact page</a>
+          </div>
+        </article>
+
+        <aside class="card col-6">
+          <h2 class="h2">Quick form (prepares an email)</h2>
+          <p class="muted" style="font-size: 12px; margin-bottom: 10px;">
+            This does not submit data. It opens your email client with structured text.
+          </p>
+
+          <form id="interest-form">
+            <div class="form-row">
+              <div class="field">
+                <label class="kicker" for="f_name">Name (optional)</label>
+                <input class="input" id="f_name" type="text" placeholder="First name only is fine" />
+              </div>
+
+              <div class="field">
+                <label class="kicker" for="f_location">Location</label>
+                <input class="input" id="f_location" type="text" placeholder="e.g., Vancouver, BC (or remote)" />
+              </div>
+
+              <div class="field full">
+                <label class="kicker" for="f_pathway">Pathway</label>
+                <select class="select" id="f_pathway">
+                  <option value="Funding, Grants & Partnerships">Funding, Grants & Partnerships</option>
+                  <option value="Legal, Policy & Advocacy Ally">Legal, Policy & Advocacy Ally</option>
+                  <option value="Mental Health & Social Service Ally">Mental Health & Social Service Ally</option>
+                  <option value="Community Outreach / Storytelling / Design">Community Outreach / Storytelling / Design</option>
+                  <option value="Operations & Governance Support">Operations & Governance Support</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="kicker" for="f_availability">Availability</label>
+                <input class="input" id="f_availability" type="text" placeholder="e.g., ~3 hours/month for 6 months" />
+              </div>
+
+              <div class="field">
+                <label class="kicker" for="f_background">Background</label>
+                <input class="input" id="f_background" type="text" placeholder="e.g., nonprofit ops, grants, policy, design" />
+              </div>
+
+              <div class="field full">
+                <label class="kicker" for="f_note">Short note</label>
+                <textarea class="textarea" id="f_note" placeholder="Why this matters + how you can help (no sensitive identifiers)"></textarea>
+              </div>
+
+              <div class="field full">
+                <button class="btn btn-primary" type="submit">Prepare email</button>
+                <a class="btn btn-outline" href="/privacy/" style="margin-left: 8px;">Privacy</a>
+              </div>
+            </div>
+          </form>
+
+          <p class="muted" style="font-size: 11px; margin-top: 10px;">
+            If there is a fit, next steps and scope will be shared.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer injected by /assets/777-shell.js -->
+  <div id="site-footer"></div>
+
+  <script src="/assets/777-shell.js?v=2025-12-14"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("interest-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var name = (document.getElementById("f_name").value || "").trim();
+        var location = (document.getElementById("f_location").value || "").trim();
+        var pathway = (document.getElementById("f_pathway").value || "").trim();
+        var availability = (document.getElementById("f_availability").value || "").trim();
+        var background = (document.getElementById("f_background").value || "").trim();
+        var note = (document.getElementById("f_note").value || "").trim();
+
+        var subject = "Volunteer / collaboration – " + (pathway || "Enquiry") + (name ? " (" + name + ")" : "");
+        var body = [];
+
+        if (name) body.push("Name: " + name);
+        if (location) body.push("Location: " + location);
+        body.push("Pathway: " + (pathway || "General"));
+        if (background) body.push("Background: " + background);
+        if (availability) body.push("Availability: " + availability);
+
+        if (note) body.push("\nNote:\n" + note);
+
+        body.push("\n(Please avoid full names, addresses, employer identifiers, or case-specific details in the first message.)");
+
+        var mailto =
+          "mailto:contact@the777foundation.org" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body.join("\n"));
+
+        window.location.href = mailto;
+      });
+    })();
+  </script>
 </body>
 </html>
