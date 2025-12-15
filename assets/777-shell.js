@@ -1,65 +1,118 @@
+/* 777 Shell JS — inject header/footer, active nav, mobile menu, footer year, contact mailto
+   Version: 2025.12.14
+*/
 (function () {
   "use strict";
 
-  function setActiveLinks() {
-    var path = (location.pathname || "/").toLowerCase();
-    document.querySelectorAll(".nav-links a").forEach(function (a) {
-      var href = (a.getAttribute("href") || "").toLowerCase();
-      if (!href || href === "#") return;
-      // match by directory
-      if (href !== "/" && path.startsWith(href)) a.classList.add("is-active");
-      if (href === "/" && (path === "/" || path === "/index.html")) a.classList.add("is-active");
+  var BASE = "/assets/partials";
+  var HEADER_URL = BASE + "/header.html";
+  var FOOTER_URL = BASE + "/footer.html";
+
+  function norm(p) {
+    if (!p) return "/";
+    p = String(p).split("?")[0].split("#")[0];
+    if (p.endsWith("/index.html")) p = p.slice(0, -11) + "/";
+    if (p === "/index.html") p = "/";
+    if (!p.startsWith("/")) p = "/" + p;
+    if (p.length > 1 && !p.endsWith("/") && !p.includes(".")) p += "/";
+    return p.toLowerCase();
+  }
+
+  async function inject(id, url) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    try {
+      var res = await fetch(url, { cache: "no-cache" });
+      if (!res.ok) throw new Error(String(res.status));
+      el.innerHTML = await res.text();
+    } catch (e) {
+      el.innerHTML =
+        '<div class="container" style="padding:14px 20px;color:var(--muted);font-size:12px;">' +
+        "Navigation failed to load. Please reload." +
+        "</div>";
+    }
+  }
+
+  function setYear() {
+    var y = document.getElementById("year");
+    if (y) y.textContent = String(new Date().getFullYear());
+  }
+
+  function activateNav() {
+    var path = norm(location.pathname || "/");
+    document.querySelectorAll('[data-nav] a[href]').forEach(function (a) {
+      var href = a.getAttribute("href") || "";
+      if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("#")) return;
+
+      var target = href.startsWith("/")
+        ? href
+        : (location.pathname || "/").replace(/[^\/]*$/, "") + href;
+
+      target = norm(target);
+      if ((target === "/" && path === "/") || (target !== "/" && path.startsWith(target))) {
+        a.classList.add("active");
+      }
     });
   }
 
-  function setupMenu() {
-    var btn = document.querySelector("[data-menu-btn]");
-    var menu = document.querySelector("[data-menu]");
-    if (!btn || !menu) return;
+  function wireBurger() {
+    var burger = document.getElementById("burger");
+    var mobile = document.getElementById("mobileNav");
+    if (!burger || !mobile) return;
 
-    function closeMenu() {
-      menu.hidden = true;
-      btn.setAttribute("aria-expanded", "false");
-    }
+    burger.addEventListener("click", function () {
+      var open = mobile.style.display === "block";
+      mobile.style.display = open ? "none" : "block";
+      burger.setAttribute("aria-expanded", String(!open));
+    });
 
-    function toggleMenu() {
-      var isOpen = btn.getAttribute("aria-expanded") === "true";
-      if (isOpen) closeMenu();
-      else {
-        menu.hidden = false;
-        btn.setAttribute("aria-expanded", "true");
+    mobile.addEventListener("click", function (e) {
+      if (e.target && e.target.tagName === "A") {
+        mobile.style.display = "none";
+        burger.setAttribute("aria-expanded", "false");
       }
-    }
+    });
+  }
 
-    btn.addEventListener("click", function (e) {
+  function wireMailtoBuilder() {
+    var form = document.getElementById("contact-form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-      toggleMenu();
-    });
 
-    // close when clicking a link
-    menu.addEventListener("click", function (e) {
-      var t = e.target;
-      if (t && t.tagName === "A") closeMenu();
-    });
+      var name = (document.getElementById("name") || {}).value || "";
+      var role = (document.getElementById("role") || {}).value || "General";
+      var msg = (document.getElementById("message") || {}).value || "";
 
-    // close on outside click
-    document.addEventListener("click", function (e) {
-      if (!menu.hidden) {
-        var nav = document.getElementById("site-nav");
-        if (nav && !nav.contains(e.target)) closeMenu();
-      }
-    });
+      name = String(name).trim();
+      role = String(role).trim();
+      msg = String(msg).trim();
 
-    // close on resize to desktop
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 780) closeMenu();
-    });
+      var subject = "The 777 Foundation Society – " + role + " enquiry";
+      var body = [];
+      if (name) body.push("Name: " + name);
+      body.push("Role: " + role);
+      if (msg) body.push("\nSummary:\n" + msg);
+      body.push("\n(Please avoid full names, addresses, or employer identifiers in the first email.)");
 
-    closeMenu();
+      location.href =
+        "mailto:contact@the777foundation.org?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body.join("\n"));
+    });
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    setActiveLinks();
-    setupMenu();
-  });
+  async function boot() {
+    await inject("site-header", HEADER_URL);
+    await inject("site-footer", FOOTER_URL);
+    setYear();
+    activateNav();
+    wireBurger();
+    wireMailtoBuilder();
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();
