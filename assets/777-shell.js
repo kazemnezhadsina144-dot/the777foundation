@@ -1,4 +1,4 @@
-/* 777 Shell (Inject Header/Footer + Year + Mobile Menu + Contact mailto) */
+/* 777 Shell (Inject Header/Footer + Year + Mobile Menu + Active Link + Contact mailto) */
 /* Version: 2025.12.14+777 */
 
 (function () {
@@ -7,6 +7,7 @@
   var PARTIALS_BASE = "/assets/partials";
 
   function $(sel, root) { return (root || document).querySelector(sel); }
+  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
   function setYear() {
     var y = $("#year");
@@ -33,21 +34,18 @@
       else openMenu();
     });
 
-    // Close on navigation
     menu.addEventListener("click", function (e) {
       var a = e.target && e.target.closest && e.target.closest("a");
       if (!a) return;
       closeMenu();
     });
 
-    // Close on outside click
     document.addEventListener("click", function (e) {
       if (menu.hidden) return;
       if (menu.contains(e.target) || burger.contains(e.target)) return;
       closeMenu();
     });
 
-    // Close on ESC
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeMenu();
     });
@@ -84,6 +82,27 @@
     });
   }
 
+  function markActiveLinks() {
+    var path = (window.location.pathname || "/").toLowerCase();
+    if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+
+    var links = $all(".nav a, .mobile-menu a");
+    links.forEach(function (a) {
+      var href = (a.getAttribute("href") || "").toLowerCase();
+      if (!href || href.indexOf("mailto:") === 0 || href.indexOf("#") === 0) return;
+
+      // Normalize href path (ignore trailing slash)
+      var tmp = href;
+      if (tmp.indexOf("http") === 0) return;
+      if (tmp.length > 1 && tmp.endsWith("/")) tmp = tmp.slice(0, -1);
+
+      if (tmp === path) {
+        a.style.color = "var(--text)";
+        a.style.position = "relative";
+      }
+    });
+  }
+
   function fetchPartial(url) {
     return fetch(url, { credentials: "same-origin" }).then(function (r) {
       if (!r.ok) throw new Error("Partial fetch failed: " + url + " (" + r.status + ")");
@@ -117,6 +136,7 @@
       setYear();
       setupMobileMenu();
       setupContactForm();
+      markActiveLinks();
     });
   }
 
