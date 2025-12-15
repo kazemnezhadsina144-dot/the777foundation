@@ -1,3 +1,4 @@
+<!-- /get-involved/funding-partnerships-lead/index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,421 +6,423 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Funding & Partnerships Lead | The 777 Foundation Society</title>
-  <meta name="description" content="Role Brief — Funding & Partnerships Lead. Bring real resources (funding and in-kind support) into The 777 Foundation Society and maintain a focused, high-quality pipeline." />
+  <meta name="description" content="Role brief: Funding & Partnerships Lead (Capital & Funding Operator). Own a focused funding pipeline, build partner relationships, and turn the Society’s mandate into fundable, structured opportunities." />
 
   <link rel="canonical" href="https://www.the777foundation.org/get-involved/funding-partnerships-lead/" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Funding & Partnerships Lead | The 777 Foundation Society" />
-  <meta property="og:description" content="Capital & Funding Operator. Own a small, serious pipeline from identification to outcome. Early build phase, BC, Canada." />
+  <meta property="og:description" content="Own a focused pipeline. Build funder/partner relationships. Measured on movement and results." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.the777foundation.org/get-involved/funding-partnerships-lead/" />
   <meta property="og:image" content="https://www.the777foundation.org/assets/og/og-777.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicons / PWA -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/favicon-512.png" />
-  <link rel="manifest" href="/assets/site.webmanifest" />
-
-  <link rel="stylesheet" href="/assets/777-shell.css?v=2025-12-14" />
+  <link rel="stylesheet" href="/assets/777-shell.css?v=2025-12-15" />
 
   <style>
-    /* Page-only styling (minimal; keeps global shell as source of truth) */
-    .kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .78; }
-    .lede { max-width: 920px; opacity: .88; }
-    .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; }
-    .col-8 { grid-column: span 8; }
-    .col-4 { grid-column: span 4; }
-    .col-12 { grid-column: span 12; }
+    /* Page-only (robust + responsive; avoids fragile 12-col spans) */
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    .hero { padding: 18px 0 10px; }
+    .kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted, rgba(255,255,255,.70)); }
+    .muted { color: var(--muted, rgba(255,255,255,.70)); }
+    .lede { max-width: 860px; font-size: 14px; line-height: 1.55; }
+
+    .pillrow { display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px; }
+    .pill { font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); color: var(--muted, rgba(255,255,255,0.70)); }
+
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding: 9px 14px; border-radius:999px; border:1px solid transparent; text-decoration:none; cursor:pointer; font-size:13px; }
+    .btn-primary { background: linear-gradient(135deg, #f5c153, #f0a72a); color:#1a1307; font-weight:650; box-shadow: 0 12px 30px rgba(245,193,83,0.35); }
+    .btn-outline { border-color: rgba(255,255,255,0.12); background: rgba(10,14,32,0.75); color: rgba(255,255,255,0.78); }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.22); }
+
+    .shell-section { padding: 12px 0 24px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
 
     .card {
-      background: rgba(16,20,38,0.92);
+      background: var(--card, rgba(16,20,38,0.9));
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
       padding: 14px;
     }
 
-    .pillrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .pill {
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.03);
-      opacity: .9;
-    }
-
-    .h2 { font-size: 18px; margin: 0 0 10px; }
+    .card.soft { background: rgba(255,255,255,0.015); }
+    .h1 { margin: 6px 0 8px; font-size: clamp(26px, 3.6vw, 38px); line-height: 1.12; }
+    .h2 { font-size: 18px; margin: 0 0 8px; }
     .h3 { font-size: 15px; margin: 0 0 8px; }
-    .muted { opacity: .82; }
 
-    .list { margin: 0; padding-left: 18px; }
-    .list li { margin: 7px 0; opacity: .9; }
-
-    .btnrow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 9px 14px; border-radius: 999px; text-decoration: none; cursor: pointer;
-      border: 1px solid transparent; font-size: 13px;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #f5c153, #f0a72a);
-      color: #1a1307;
-      font-weight: 650;
-      box-shadow: 0 12px 30px rgba(245,193,83,0.35);
-    }
-    .btn-outline {
-      border-color: rgba(255,255,255,0.14);
-      background: rgba(10,14,32,0.70);
-      color: rgba(255,255,255,0.86);
+    .cards {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
-    .formrow { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; }
+    .list { margin: 0; padding-left: 18px; color: var(--muted, rgba(255,255,255,0.72)); }
+    .list li { margin: 6px 0; }
+
+    .navbox a { color: rgba(255,255,255,0.86); text-decoration: none; }
+    .navbox a:hover { text-decoration: underline; }
+    .navgrid { display:grid; gap:8px; margin-top: 10px; }
+    .divider { height:1px; background: rgba(255,255,255,0.08); margin: 12px 0; }
+
+    .form-row { display:grid; gap:10px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
     .field { grid-column: span 6; }
     .field.full { grid-column: span 12; }
-    .input, .textarea {
-      width: 100%;
-      padding: 10px 11px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.10);
+    .input, .select, .textarea {
+      width:100%;
+      padding:10px 11px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.10);
       background: rgba(5,8,20,0.75);
       color: rgba(255,255,255,0.92);
-      font-size: 13px;
-      outline: none;
+      font-size:13px;
+      outline:none;
     }
-    .textarea { resize: vertical; min-height: 120px; }
+    .textarea { resize: vertical; min-height: 110px; }
 
-    @media (max-width: 940px) {
-      .col-8, .col-4 { grid-column: span 12; }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
       .field { grid-column: span 12; }
     }
   </style>
-
-  <!-- Optional structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Funding & Partnerships Lead",
-    "url":"https://www.the777foundation.org/get-involved/funding-partnerships-lead/",
-    "isPartOf":{
-      "@type":"WebSite",
-      "name":"The 777 Foundation Society",
-      "url":"https://www.the777foundation.org/"
-    }
-  }
-  </script>
 </head>
 
 <body>
   <!-- Header injected by /assets/777-shell.js -->
   <div id="site-header" data-active="/get-involved/"></div>
 
-  <main class="section">
-    <section style="padding-top: 18px;">
-      <div class="kicker">Role brief • Get involved</div>
-      <h1 style="margin:6px 0 10px; font-size: clamp(28px, 4vw, 40px); line-height: 1.12;">
-        Funding & Partnerships Lead
-      </h1>
-      <p class="lede muted" style="font-size: 14px;">
-        Internal focus: <strong>Capital & Funding Operator</strong> — responsible for bringing real resources (funding and in-kind support)
-        into The 777 Foundation Society and maintaining a focused, high-quality pipeline.
-      </p>
+  <main class="shell-section">
+    <div class="wrap">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="kicker">Get involved • Role brief</div>
+        <h1 class="h1">Funding & Partnerships Lead</h1>
+        <p class="muted lede">
+          Capital & Funding Operator — responsible for bringing real resources (funding and in-kind support) into the Society
+          and maintaining a focused, high-quality pipeline.
+        </p>
 
-      <div class="pillrow">
-        <span class="pill">BC, Canada (remote-friendly)</span>
-        <span class="pill">Early build phase</span>
-        <span class="pill">Pipeline ownership</span>
-        <span class="pill">Outcomes & accountability</span>
-      </div>
+        <div class="pillrow">
+          <span class="pill">Early build phase</span>
+          <span class="pill">Outcome-driven</span>
+          <span class="pill">Remote-friendly</span>
+          <span class="pill">BC-based preferred</span>
+        </div>
 
-      <div class="btnrow">
-        <a class="btn btn-primary" href="#apply">Express interest</a>
-        <a class="btn btn-outline" href="/get-involved/">Back to Get involved</a>
-        <a class="btn btn-outline" href="/programs/">Program streams</a>
-      </div>
-    </section>
+        <div class="actions">
+          <a class="btn btn-primary" href="#apply">Express interest</a>
+          <a class="btn btn-outline" href="/get-involved/">Back to Get involved</a>
+          <a class="btn btn-outline" href="/donate/">Donate</a>
+        </div>
 
-    <section style="margin-top: 18px;">
-      <div class="grid">
-        <article class="card col-8">
-          <h2 class="h2">1) About The 777 Foundation Society</h2>
-          <p class="muted" style="font-size: 13px;">
-            The Society is in an early build phase. Mission: design and run programs that protect dignity and create long-term opportunity for
-            people navigating vulnerable transitions — especially newcomers and workers facing unstable conditions or high economic/psychological pressure.
-          </p>
+        <p class="muted" style="font-size:12px; margin-top:10px;">
+          Note: This is not an emergency or crisis service. If there is immediate danger or acute distress, contact emergency services first.
+        </p>
+      </section>
 
-          <div class="grid" style="margin-top: 10px;">
-            <div class="card col-12" style="background: rgba(255,255,255,0.015);">
-              <div class="kicker">Current focus</div>
-              <ul class="list">
-                <li>Governance and legal structure</li>
-                <li>Program architecture (pilot designs)</li>
-                <li>Funding pathways (public, philanthropic, and strategic partners)</li>
-              </ul>
-              <p class="muted" style="font-size: 12px; margin-top: 8px;">
-                Public-facing programs and member growth start once core funding and operating infrastructure are in place.
-              </p>
+      <section class="layout" style="margin-top: 12px;">
+        <!-- MAIN -->
+        <div style="min-width:0;">
+          <!-- 1) ABOUT -->
+          <article class="card" id="about">
+            <div class="kicker">1) About The 777 Foundation Society</div>
+            <p class="muted" style="font-size:13px;">
+              The 777 Foundation Society is in an early build phase. The mission is to design and run programs that protect dignity
+              and create long-term opportunity for people navigating vulnerable transitions — especially newcomers, workers in unstable
+              conditions, and those under high economic or psychological pressure.
+            </p>
+            <div class="cards" style="margin-top: 12px;">
+              <div class="card soft">
+                <div class="kicker">Current focus</div>
+                <ul class="list">
+                  <li>Governance and legal structure</li>
+                  <li>Program architecture (pilot designs)</li>
+                  <li>Funding pathways (public, philanthropic, and strategic partners)</li>
+                </ul>
+              </div>
+              <div class="card soft">
+                <div class="kicker">Next phase</div>
+                <p class="muted" style="font-size:13px; margin:0;">
+                  Public-facing programs and member growth start once core funding and infrastructure are in place.
+                </p>
+              </div>
             </div>
+          </article>
+
+          <!-- 2) ROLE SUMMARY -->
+          <article class="card" id="summary" style="margin-top: 12px;">
+            <div class="kicker">2) Role summary</div>
+            <p class="muted" style="font-size:13px;">
+              This is not a general “grant search” or advisory role. The Funding & Partnerships Lead actively brings external resources
+              into the Society and owns the early pipeline from identification to clear outcome (yes / no / later).
+              The role sits between the Society and funders/partners, while the founder remains in the architect/strategy role.
+            </p>
+          </article>
+
+          <!-- 3) OWNERSHIP -->
+          <article class="card" id="ownership" style="margin-top: 12px;">
+            <div class="kicker">3) What you will own</div>
+            <div class="cards" style="margin-top: 10px;">
+              <div class="card soft">
+                <h2 class="h2">Funding pipeline ownership</h2>
+                <ul class="list">
+                  <li>Identify and prioritise realistic funding sources (government programs, foundations, institutional funders, major donors, aligned partners).</li>
+                  <li>Maintain a small but serious pipeline (not a large list of theoretical options).</li>
+                  <li>Keep stages clear: research → contact → proposal → review → decision.</li>
+                </ul>
+              </div>
+              <div class="card soft">
+                <h2 class="h2">External relationship management</h2>
+                <ul class="list">
+                  <li>Act as the primary point of contact for early-stage discussions.</li>
+                  <li>Initiate contact, schedule conversations, and follow through consistently.</li>
+                  <li>Maintain professional follow-up until a clear outcome exists.</li>
+                </ul>
+              </div>
+              <div class="card soft">
+                <h2 class="h2">Shaping proposals & offers</h2>
+                <ul class="list">
+                  <li>Translate the Society’s vision into fundable proposals and partnership concepts.</li>
+                  <li>Co-design narrative/materials with the founder, then tailor per funder requirements.</li>
+                  <li>Protect feasibility and dignity-first delivery (scope discipline).</li>
+                </ul>
+              </div>
+              <div class="card soft">
+                <h2 class="h2">Reporting & accountability</h2>
+                <ul class="list">
+                  <li>Short updates: opportunities, stage, next step, probability, and outcomes.</li>
+                  <li>Time spent must be justified by impact and probability.</li>
+                  <li>Measured on movement and results, not volume of documents.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4) SUCCESS -->
+          <article class="card" id="success" style="margin-top: 12px;">
+            <div class="kicker">4) What success looks like (first 12 months)</div>
+            <div class="cards" style="margin-top: 10px;">
+              <div class="card soft">
+                <div class="kicker">Funding secured</div>
+                <p class="muted" style="font-size:13px; margin:0;">
+                  Meaningful net new funding (illustrative: CAD 75k–150k) via grants, institutional funders, or major donors.
+                </p>
+              </div>
+              <div class="card soft">
+                <div class="kicker">Concrete wins</div>
+                <p class="muted" style="font-size:13px; margin:0;">
+                  Several approvals/commitments (illustrative: 3–6 contributions or multi-year commitments).
+                </p>
+              </div>
+              <div class="card soft">
+                <div class="kicker">Healthy pipeline</div>
+                <p class="muted" style="font-size:13px; margin:0;">
+                  A live pipeline of ~10–20 active opportunities with clear stages and next actions.
+                </p>
+              </div>
+              <div class="card soft">
+                <div class="kicker">Quarterly motion</div>
+                <p class="muted" style="font-size:13px; margin:0;">
+                  Multiple opportunities advance at least one full step each quarter.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5) COMP -->
+          <article class="card" id="comp" style="margin-top: 12px;">
+            <div class="kicker">5) Compensation & structure</div>
+            <div class="cards" style="margin-top: 10px;">
+              <div class="card soft">
+                <h3 class="h3">Phase 1 — Pilot (first 3–6 months)</h3>
+                <ul class="list">
+                  <li>Lean start (volunteer/advisory or small retainer by agreement).</li>
+                  <li>Success-based bonuses tied directly to funds actually received by the Society.</li>
+                  <li>Principle: rewards follow real resource movement, not activity.</li>
+                </ul>
+              </div>
+              <div class="card soft">
+                <h3 class="h3">Phase 2 — After initial milestones</h3>
+                <ul class="list">
+                  <li>Part-time leadership position with stable base pay.</li>
+                  <li>Performance bonus linked to total funds raised over a year.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6) WHO YOU ARE -->
+          <article class="card" id="who" style="margin-top: 12px;">
+            <div class="kicker">6) Who you are</div>
+            <ul class="list">
+              <li>Comfortable being measured on outcomes (funding, commitments, concrete progress).</li>
+              <li>Skilled at relationship-building with decision-makers (government, philanthropy, institutions).</li>
+              <li>Can work with a founder-architect: translate strategy into fundable offers without hand-holding.</li>
+              <li>Organised and persistent; maintains a small pipeline and follows through.</li>
+              <li>Values dignity, fairness, and system-level impact.</li>
+            </ul>
+            <p class="muted" style="font-size:12px; margin-top:10px;">
+              Experience is a plus (nonprofit development, fundraising, grant writing, institutional partnerships, philanthropy, impact program design) but not strictly required.
+            </p>
+          </article>
+
+          <!-- 7) HOW WE START -->
+          <article class="card" id="start" style="margin-top: 12px;">
+            <div class="kicker">7) How we’ll start</div>
+            <ol class="list" style="padding-left: 20px;">
+              <li>Align on scope, expectations, and initial targets for a 3–6 month pilot.</li>
+              <li>Define a small number of priority funding/partnership targets.</li>
+              <li>You lead the external motion; the founder supports on strategy and program architecture.</li>
+              <li>Review progress regularly and adjust based on what is actually working.</li>
+            </ol>
+          </article>
+
+          <!-- 8) APPLY -->
+          <article class="card" id="apply" style="margin-top: 12px;">
+            <div class="kicker">8) Next step</div>
+            <p class="muted" style="font-size:13px;">
+              Send your CV or LinkedIn profile, plus a short note on:
+              (1) funding/partnership work done before, and (2) what attracts you (or doesn’t) about this role.
+            </p>
+
+            <div class="actions">
+              <a class="btn btn-primary"
+                 href="mailto:contact@the777foundation.org?subject=Role%20Interest%20%E2%80%93%20Funding%20%26%20Partnerships%20Lead&body=Hello%20The%20777%20Foundation%20Society%2C%0A%0AInterested%20in%20the%20Funding%20%26%20Partnerships%20Lead%20role.%0A%0A1)%20Profile%20%2F%20CV%20or%20LinkedIn%3A%20%5Bpaste%20link%5D%0A2)%20Relevant%20experience%3A%20%5B2%E2%80%933%20lines%5D%0A3)%20What%20attracts%20me%3A%20%5B2%E2%80%933%20lines%5D%0A4)%20Availability%3A%20%5Be.g.%203%20hours%2Fmonth%20for%206%20months%5D%0A%0AThank%20you%2C">
+                Email about this role
+              </a>
+              <a class="btn btn-outline" href="/contact/">Contact page</a>
+              <a class="btn btn-outline" href="/privacy/">Privacy</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="muted" style="font-size:12px; margin:0 0 10px;">
+              Quick form (does not submit data). It prepares an email draft in your email client.
+            </p>
+
+            <form id="role-form">
+              <div class="form-row">
+                <div class="field">
+                  <label class="kicker" for="r_name">Name (optional)</label>
+                  <input class="input" id="r_name" type="text" placeholder="First name only is fine" />
+                </div>
+
+                <div class="field">
+                  <label class="kicker" for="r_location">Location</label>
+                  <input class="input" id="r_location" type="text" placeholder="e.g., Calgary, AB (or remote)" />
+                </div>
+
+                <div class="field">
+                  <label class="kicker" for="r_availability">Availability</label>
+                  <input class="input" id="r_availability" type="text" placeholder="e.g., ~3 hours/month for 6 months" />
+                </div>
+
+                <div class="field">
+                  <label class="kicker" for="r_profile">LinkedIn / CV link</label>
+                  <input class="input" id="r_profile" type="text" placeholder="Paste URL" />
+                </div>
+
+                <div class="field full">
+                  <label class="kicker" for="r_note">Short note</label>
+                  <textarea class="textarea" id="r_note" placeholder="Relevant experience + what attracts you (no sensitive identifiers)"></textarea>
+                </div>
+
+                <div class="field full">
+                  <button class="btn btn-primary" type="submit">Prepare email</button>
+                  <a class="btn btn-outline" href="/get-involved/" style="margin-left: 8px;">Back</a>
+                </div>
+              </div>
+            </form>
+
+            <p class="muted" style="font-size:11px; margin-top:10px;">
+              Please avoid full names, addresses, employer identifiers, or case-specific details in the first message.
+            </p>
+          </article>
+        </div>
+
+        <!-- ASIDE -->
+        <aside style="min-width:0;">
+          <div class="card navbox" style="position: sticky; top: 14px;">
+            <div class="kicker">On this page</div>
+            <div class="navgrid">
+              <a href="#about">1) About</a>
+              <a href="#summary">2) Role summary</a>
+              <a href="#ownership">3) What you will own</a>
+              <a href="#success">4) Success (12 months)</a>
+              <a href="#comp">5) Compensation</a>
+              <a href="#who">6) Who you are</a>
+              <a href="#start">7) How we start</a>
+              <a href="#apply">8) Next step</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="kicker">Quick facts</div>
+            <div class="pillrow" style="margin-top: 10px;">
+              <span class="pill">Outcome-driven</span>
+              <span class="pill">Focused pipeline</span>
+              <span class="pill">Clean partnerships</span>
+              <span class="pill">Dignity-first</span>
+            </div>
+
+            <div class="actions" style="margin-top: 12px;">
+              <a class="btn btn-primary" href="#apply">Express interest</a>
+              <a class="btn btn-outline" href="/donate/">Donate</a>
+            </div>
+
+            <p class="muted" style="font-size:11px; margin-top:10px;">
+              If there is fit, next steps and scope will be shared.
+            </p>
           </div>
-        </article>
-
-        <aside class="card col-4">
-          <h2 class="h2">Role at a glance</h2>
-          <ul class="list">
-            <li><strong>External title:</strong> Funding & Partnerships Lead</li>
-            <li><strong>Core function:</strong> bring resources + build bridges to aligned funders/partners</li>
-            <li><strong>Scope:</strong> small but serious pipeline (not a big theoretical list)</li>
-            <li><strong>Founder role:</strong> architect/strategy support; role leads external motion</li>
-          </ul>
-          <p class="muted" style="font-size: 12px; margin-top: 10px;">
-            This is not a general “grant search” role.
-          </p>
         </aside>
-      </div>
-    </section>
-
-    <section style="margin-top: 14px;">
-      <div class="grid">
-        <article class="card col-12">
-          <h2 class="h2">2) Role summary</h2>
-          <p class="muted" style="font-size: 13px;">
-            The Funding & Partnerships Lead actively brings external resources into the Society and owns the early funding and partnership pipeline
-            from identification to clear outcome (yes / no / later). The role sits between the Society and funders, institutions, and aligned partners.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section style="margin-top: 14px;">
-      <div class="grid">
-        <article class="card col-8">
-          <h2 class="h2">3) What you will own</h2>
-
-          <h3 class="h3">A) Funding pipeline design & ownership</h3>
-          <ul class="list">
-            <li>Identify and prioritise realistic sources (government programs, foundations, institutional funders, major donors, aligned partners).</li>
-            <li>Maintain a focused pipeline with stages and next actions (not a large list of links).</li>
-          </ul>
-
-          <h3 class="h3" style="margin-top: 12px;">B) External relationship building & management</h3>
-          <ul class="list">
-            <li>Act as primary point of contact for early-stage funder/partner discussions.</li>
-            <li>Initiate outreach, support meetings where needed, and run consistent follow-up to clear outcomes.</li>
-          </ul>
-
-          <h3 class="h3" style="margin-top: 12px;">C) Shaping proposals & opportunities</h3>
-          <ul class="list">
-            <li>Translate program vision into fundable concepts and partnership offers.</li>
-            <li>Coordinate with the core team; tailor submissions to funder requirements.</li>
-          </ul>
-
-          <h3 class="h3" style="margin-top: 12px;">D) Reporting & accountability</h3>
-          <ul class="list">
-            <li>Regular updates: opportunity, stage, next step, probability, and outcome.</li>
-            <li>Effort must be justified by potential impact and likelihood.</li>
-          </ul>
-
-          <p class="muted" style="font-size: 12px; margin-top: 10px;">
-            Measurement: movement + results, not the number of documents produced.
-          </p>
-        </article>
-
-        <aside class="card col-4">
-          <h2 class="h2">What this role is not</h2>
-          <ul class="list">
-            <li>Not “just grant research”</li>
-            <li>Not legal sign-off or financial sign-off</li>
-            <li>Not public storytelling based on lived experience</li>
-            <li>Not crisis response or frontline counselling</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section style="margin-top: 14px;">
-      <div class="grid">
-        <article class="card col-12">
-          <h2 class="h2">4) What success looks like (first 12 months)</h2>
-          <div class="grid">
-            <div class="card col-4" style="background: rgba(255,255,255,0.015);">
-              <div class="kicker">Funding secured</div>
-              <p class="muted" style="font-size: 13px; margin-top: 8px;">
-                Meaningful net new funding (illustrative: CAD 75k–150k) via grants, institutional funders, or major donors.
-              </p>
-            </div>
-            <div class="card col-4" style="background: rgba(255,255,255,0.015);">
-              <div class="kicker">Concrete wins</div>
-              <p class="muted" style="font-size: 13px; margin-top: 8px;">
-                Several approvals/commitments (illustrative: 3–6 grants, signed contributions, or multi-year commitments).
-              </p>
-            </div>
-            <div class="card col-4" style="background: rgba(255,255,255,0.015);">
-              <div class="kicker">Healthy pipeline</div>
-              <p class="muted" style="font-size: 13px; margin-top: 8px;">
-                A live pipeline (illustrative: 10–20 active opportunities) with clear stages and next steps.
-              </p>
-            </div>
-          </div>
-          <p class="muted" style="font-size: 12px; margin-top: 10px;">
-            Quarterly motion: multiple opportunities advance at least one stage each quarter.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section style="margin-top: 14px;">
-      <div class="grid">
-        <article class="card col-6">
-          <h2 class="h2">5) Compensation & structure</h2>
-          <h3 class="h3">Phase 1 — Pilot (3–6 months)</h3>
-          <ul class="list">
-            <li>Lean start (volunteer/advisory or small retainer by agreement).</li>
-            <li>Success-based bonuses tied to funds actually received by the Society.</li>
-            <li>Principle: paid when real resources move, not for activity alone.</li>
-          </ul>
-
-          <h3 class="h3" style="margin-top: 12px;">Phase 2 — After milestones</h3>
-          <ul class="list">
-            <li>Part-time leadership with stable base pay.</li>
-            <li>Performance bonus linked to total funds raised over a year.</li>
-          </ul>
-        </article>
-
-        <article class="card col-6">
-          <h2 class="h2">6) Who you are</h2>
-          <ul class="list">
-            <li>Comfortable being measured on outcomes (funding, commitments, concrete progress).</li>
-            <li>Skilled at relationship-building with government, philanthropy, or institutional decision-makers.</li>
-            <li>Can translate strategy into fundable offers with minimal hand-holding.</li>
-            <li>Organised and persistent with follow-through.</li>
-            <li>Aligned with dignity, fairness, and system-level impact.</li>
-          </ul>
-          <p class="muted" style="font-size: 12px; margin-top: 8px;">
-            Helpful experience (not required): nonprofit development, grant writing, institutional partnerships, philanthropy, impact program design.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section style="margin-top: 14px;">
-      <div class="grid">
-        <article class="card col-12">
-          <h2 class="h2">7) How we’ll start</h2>
-          <ol class="list" style="padding-left: 20px;">
-            <li>Align on scope, expectations, and a 3–6 month pilot.</li>
-            <li>Define a small set of priority targets.</li>
-            <li>You lead external motion; the core team supports strategy and materials.</li>
-            <li>Review progress regularly and adjust based on what works in reality.</li>
-          </ol>
-        </article>
-      </div>
-    </section>
-
-    <section id="apply" style="margin-top: 14px; padding-bottom: 18px;">
-      <div class="grid">
-        <article class="card col-6">
-          <h2 class="h2">8) Next step</h2>
-          <p class="muted" style="font-size: 13px;">
-            Send a CV or LinkedIn profile and a short note describing (1) relevant work and (2) what attracts you (or doesn’t) about this role.
-            Please avoid sensitive identifiers in the first message.
-          </p>
-
-          <div class="btnrow">
-            <a class="btn btn-primary"
-               href="mailto:contact@the777foundation.org?subject=Funding%20%26%20Partnerships%20Lead%20%E2%80%93%20Expression%20of%20Interest">
-              Email the Society
-            </a>
-            <a class="btn btn-outline" href="/privacy/">Privacy</a>
-            <a class="btn btn-outline" href="/scope/">Scope</a>
-          </div>
-
-          <p class="muted" style="font-size: 12px; margin-top: 10px;">
-            If there is a fit, next steps can be handled asynchronously first (written alignment + targets), with a short call only if needed.
-          </p>
-        </article>
-
-        <aside class="card col-6">
-          <h2 class="h2">Quick form (prepares an email)</h2>
-          <p class="muted" style="font-size: 12px; margin-bottom: 10px;">
-            This does not submit data. It opens your email client with structured text.
-          </p>
-
-          <form id="role-interest-form">
-            <div class="formrow">
-              <div class="field">
-                <label class="kicker" for="f_name">Name (optional)</label>
-                <input class="input" id="f_name" type="text" placeholder="First name only is fine" />
-              </div>
-              <div class="field">
-                <label class="kicker" for="f_location">Location</label>
-                <input class="input" id="f_location" type="text" placeholder="e.g., Alberta / Vancouver / Remote" />
-              </div>
-              <div class="field full">
-                <label class="kicker" for="f_profile">LinkedIn / CV link</label>
-                <input class="input" id="f_profile" type="text" placeholder="Paste a link (optional)" />
-              </div>
-              <div class="field">
-                <label class="kicker" for="f_availability">Availability</label>
-                <input class="input" id="f_availability" type="text" placeholder="e.g., ~3 hours/month for 6 months" />
-              </div>
-              <div class="field">
-                <label class="kicker" for="f_background">Relevant background</label>
-                <input class="input" id="f_background" type="text" placeholder="Grants, partnerships, fundraising, ops..." />
-              </div>
-              <div class="field full">
-                <label class="kicker" for="f_note">Short note</label>
-                <textarea class="textarea" id="f_note" placeholder="What attracts you about this role + what you can own (no sensitive identifiers)"></textarea>
-              </div>
-              <div class="field full">
-                <button class="btn btn-primary" type="submit">Prepare email</button>
-                <a class="btn btn-outline" href="/get-involved/" style="margin-left: 8px;">Back</a>
-              </div>
-            </div>
-          </form>
-
-          <p class="muted" style="font-size: 11px; margin-top: 10px;">
-            Subject and body are generated for clarity and fast routing.
-          </p>
-        </aside>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <!-- Footer injected by /assets/777-shell.js -->
   <div id="site-footer"></div>
 
-  <script src="/assets/777-shell.js?v=2025-12-14"></script>
+  <script src="/assets/777-shell.js?v=2025-12-15"></script>
   <script>
     (function () {
-      var form = document.getElementById("role-interest-form");
+      var form = document.getElementById("role-form");
       if (!form) return;
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        var name = (document.getElementById("f_name").value || "").trim();
-        var location = (document.getElementById("f_location").value || "").trim();
-        var profile = (document.getElementById("f_profile").value || "").trim();
-        var availability = (document.getElementById("f_availability").value || "").trim();
-        var background = (document.getElementById("f_background").value || "").trim();
-        var note = (document.getElementById("f_note").value || "").trim();
+        var name = (document.getElementById("r_name").value || "").trim();
+        var location = (document.getElementById("r_location").value || "").trim();
+        var availability = (document.getElementById("r_availability").value || "").trim();
+        var profile = (document.getElementById("r_profile").value || "").trim();
+        var note = (document.getElementById("r_note").value || "").trim();
 
-        var subject = "Funding & Partnerships Lead – Expression of Interest" + (name ? " (" + name + ")" : "");
+        var subject = "Role Interest – Funding & Partnerships Lead" + (name ? " (" + name + ")" : "");
         var body = [];
+
+        body.push("Hello The 777 Foundation Society,");
+        body.push("");
+        body.push("Interested in the Funding & Partnerships Lead role.");
+        body.push("");
 
         if (name) body.push("Name: " + name);
         if (location) body.push("Location: " + location);
-        if (profile) body.push("LinkedIn/CV: " + profile);
-        if (background) body.push("Background: " + background);
+        if (profile) body.push("LinkedIn / CV: " + profile);
         if (availability) body.push("Availability: " + availability);
 
-        body.push("\nRole: Funding & Partnerships Lead");
-        if (note) body.push("\nNote:\n" + note);
+        if (note) {
+          body.push("");
+          body.push("Note:");
+          body.push(note);
+        }
 
-        body.push("\n(Please avoid including sensitive identifiers or case-specific details in the first email.)");
+        body.push("");
+        body.push("(Please avoid full names, addresses, employer identifiers, or case-specific details in the first message.)");
 
         var mailto =
           "mailto:contact@the777foundation.org" +
