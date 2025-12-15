@@ -1,47 +1,65 @@
-<header class="nav" role="banner">
-  <div class="nav-inner">
-    <a class="nav-left" href="/" aria-label="The 777 Foundation Society home">
-      <div class="logo-mark" aria-hidden="true">777</div>
-      <div>
-        <div class="logo-main">The 777 Foundation Society</div>
-        <div class="logo-sub">Grassroots · Survivor-led · BC</div>
-      </div>
-    </a>
+(function () {
+  "use strict";
 
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/programs/">Programs</a>
-      <a href="/get-involved/">Get involved</a>
-      <a href="/governance/">Governance</a>
-      <a href="/scope/">Scope</a>
-      <a href="/contact/">Contact</a>
-    </nav>
+  function setActiveLinks() {
+    var path = (location.pathname || "/").toLowerCase();
+    document.querySelectorAll(".nav-links a").forEach(function (a) {
+      var href = (a.getAttribute("href") || "").toLowerCase();
+      if (!href || href === "#") return;
+      // match by directory
+      if (href !== "/" && path.startsWith(href)) a.classList.add("is-active");
+      if (href === "/" && (path === "/" || path === "/index.html")) a.classList.add("is-active");
+    });
+  }
 
-    <div class="nav-right">
-      <a href="/get-involved/" class="btn btn-outline">Get involved</a>
-      <a href="/donate/" class="btn btn-primary">Donate</a>
+  function setupMenu() {
+    var btn = document.querySelector("[data-menu-btn]");
+    var menu = document.querySelector("[data-menu]");
+    if (!btn || !menu) return;
 
-      <button
-        class="burger"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
+    function closeMenu() {
+      menu.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+    }
 
-  <div id="mobile-menu" class="mobile-menu" hidden>
-    <a href="/programs/">Programs</a>
-    <a href="/get-involved/">Get involved</a>
-    <a href="/governance/">Governance</a>
-    <a href="/scope/">Scope</a>
-    <a href="/privacy/">Privacy</a>
-    <a href="/contact/">Contact</a>
-    <div class="mobile-cta">
-      <a href="/get-involved/" class="btn btn-outline">Get involved</a>
-      <a href="/donate/" class="btn btn-primary">Donate</a>
-    </div>
-  </div>
-</header>
+    function toggleMenu() {
+      var isOpen = btn.getAttribute("aria-expanded") === "true";
+      if (isOpen) closeMenu();
+      else {
+        menu.hidden = false;
+        btn.setAttribute("aria-expanded", "true");
+      }
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      toggleMenu();
+    });
+
+    // close when clicking a link
+    menu.addEventListener("click", function (e) {
+      var t = e.target;
+      if (t && t.tagName === "A") closeMenu();
+    });
+
+    // close on outside click
+    document.addEventListener("click", function (e) {
+      if (!menu.hidden) {
+        var nav = document.getElementById("site-nav");
+        if (nav && !nav.contains(e.target)) closeMenu();
+      }
+    });
+
+    // close on resize to desktop
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 780) closeMenu();
+    });
+
+    closeMenu();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setActiveLinks();
+    setupMenu();
+  });
+})();
