@@ -1,148 +1,65 @@
-/* 777 Shell (Inject Header/Footer + Year + Mobile Menu + Active Link + Contact mailto) */
-/* Version: 2025.12.14+777 */
-
 (function () {
   "use strict";
 
-  var PARTIALS_BASE = "/assets/partials";
-
-  function $(sel, root) { return (root || document).querySelector(sel); }
-  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
-
-  function setYear() {
-    var y = $("#year");
-    if (y) y.textContent = String(new Date().getFullYear());
+  function setActiveLinks() {
+    var path = (location.pathname || "/").toLowerCase();
+    document.querySelectorAll(".nav-links a").forEach(function (a) {
+      var href = (a.getAttribute("href") || "").toLowerCase();
+      if (!href || href === "#") return;
+      // match by directory
+      if (href !== "/" && path.startsWith(href)) a.classList.add("is-active");
+      if (href === "/" && (path === "/" || path === "/index.html")) a.classList.add("is-active");
+    });
   }
 
-  function setupMobileMenu() {
-    var burger = $(".burger");
-    var menu = $("#mobile-menu");
-    if (!burger || !menu) return;
+  function setupMenu() {
+    var btn = document.querySelector("[data-menu-btn]");
+    var menu = document.querySelector("[data-menu]");
+    if (!btn || !menu) return;
 
-    function openMenu() {
-      menu.hidden = false;
-      burger.setAttribute("aria-expanded", "true");
-    }
     function closeMenu() {
       menu.hidden = true;
-      burger.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-expanded", "false");
     }
 
-    burger.addEventListener("click", function () {
-      var expanded = burger.getAttribute("aria-expanded") === "true";
-      if (expanded) closeMenu();
-      else openMenu();
-    });
+    function toggleMenu() {
+      var isOpen = btn.getAttribute("aria-expanded") === "true";
+      if (isOpen) closeMenu();
+      else {
+        menu.hidden = false;
+        btn.setAttribute("aria-expanded", "true");
+      }
+    }
 
-    menu.addEventListener("click", function (e) {
-      var a = e.target && e.target.closest && e.target.closest("a");
-      if (!a) return;
-      closeMenu();
-    });
-
-    document.addEventListener("click", function (e) {
-      if (menu.hidden) return;
-      if (menu.contains(e.target) || burger.contains(e.target)) return;
-      closeMenu();
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeMenu();
-    });
-  }
-
-  function setupContactForm() {
-    var form = $("#contact-form");
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
+    btn.addEventListener("click", function (e) {
       e.preventDefault();
-
-      var name = ($("#name") && $("#name").value || "").trim();
-      var role = ($("#role") && $("#role").value) || "Enquiry";
-      var msg = ($("#message") && $("#message").value || "").trim();
-
-      var subject = "The 777 Foundation Society – " + role + " enquiry";
-      var bodyParts = [];
-
-      if (name) bodyParts.push("Name: " + name);
-      bodyParts.push("Role: " + role);
-      if (msg) bodyParts.push("\nSummary:\n" + msg);
-
-      bodyParts.push("\n(Please do not include full names, addresses, or employer identifiers in this first email.)");
-
-      var body = encodeURIComponent(bodyParts.join("\n"));
-      var mailto =
-        "mailto:contact@the777foundation.org?subject=" +
-        encodeURIComponent(subject) +
-        "&body=" +
-        body;
-
-      window.location.href = mailto;
+      toggleMenu();
     });
-  }
 
-  function markActiveLinks() {
-    var path = (window.location.pathname || "/").toLowerCase();
-    if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+    // close when clicking a link
+    menu.addEventListener("click", function (e) {
+      var t = e.target;
+      if (t && t.tagName === "A") closeMenu();
+    });
 
-    var links = $all(".nav a, .mobile-menu a");
-    links.forEach(function (a) {
-      var href = (a.getAttribute("href") || "").toLowerCase();
-      if (!href || href.indexOf("mailto:") === 0 || href.indexOf("#") === 0) return;
-
-      // Normalize href path (ignore trailing slash)
-      var tmp = href;
-      if (tmp.indexOf("http") === 0) return;
-      if (tmp.length > 1 && tmp.endsWith("/")) tmp = tmp.slice(0, -1);
-
-      if (tmp === path) {
-        a.style.color = "var(--text)";
-        a.style.position = "relative";
+    // close on outside click
+    document.addEventListener("click", function (e) {
+      if (!menu.hidden) {
+        var nav = document.getElementById("site-nav");
+        if (nav && !nav.contains(e.target)) closeMenu();
       }
     });
-  }
 
-  function fetchPartial(url) {
-    return fetch(url, { credentials: "same-origin" }).then(function (r) {
-      if (!r.ok) throw new Error("Partial fetch failed: " + url + " (" + r.status + ")");
-      return r.text();
+    // close on resize to desktop
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 780) closeMenu();
     });
+
+    closeMenu();
   }
 
-  function inject() {
-    var headerHost = document.getElementById("site-header");
-    var footerHost = document.getElementById("site-footer");
-
-    var tasks = [];
-
-    if (headerHost) {
-      tasks.push(
-        fetchPartial(PARTIALS_BASE + "/header.html").then(function (html) {
-          headerHost.innerHTML = html;
-        })
-      );
-    }
-
-    if (footerHost) {
-      tasks.push(
-        fetchPartial(PARTIALS_BASE + "/footer.html").then(function (html) {
-          footerHost.innerHTML = html;
-        })
-      );
-    }
-
-    return Promise.all(tasks).then(function () {
-      setYear();
-      setupMobileMenu();
-      setupContactForm();
-      markActiveLinks();
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", inject);
-  } else {
-    inject();
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    setActiveLinks();
+    setupMenu();
+  });
 })();
