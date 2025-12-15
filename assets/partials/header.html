@@ -1,48 +1,36 @@
-<header class="nav" id="site-nav">
-  <div class="nav-inner">
-    <a class="brand" href="/" aria-label="The 777 Foundation Society home">
-      <span class="logo-mark" aria-hidden="true">777</span>
-      <span class="brand-text">
-        <span class="logo-main">The 777 Foundation Society</span>
-        <span class="logo-sub">Grassroots · Survivor-led · BC</span>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="/" aria-label="Home">
+      <span class="brand__mark">777</span>
+      <span class="brand__text">
+        <span class="brand__title">The 777 Foundation Society</span>
+        <span class="brand__sub">Pilot phase · building capacity for 2026</span>
       </span>
     </a>
 
-    <nav class="nav-links" aria-label="Primary">
+    <nav class="nav__links" data-nav aria-label="Primary">
+      <a href="/">Home</a>
       <a href="/programs/">Programs</a>
       <a href="/get-involved/">Get involved</a>
       <a href="/governance/">Governance</a>
+      <a href="/scope/">Scope</a>
       <a href="/contact/">Contact</a>
     </nav>
 
-    <div class="nav-right">
-      <a class="btn btn-outline nav-ghost" href="/get-involved/">Get involved</a>
-      <a class="btn btn-primary" href="/donate/">Donate</a>
-
-      <button
-        class="burger"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        data-menu-btn
-      >
-        <span></span><span></span><span></span>
-      </button>
+    <div class="nav__actions">
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">☰</button>
+      <a class="btn btn--ghost" href="/get-involved/">Volunteer</a>
+      <a class="btn btn--primary" href="/donate/">Donate</a>
     </div>
   </div>
 
-  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+  <div class="nav__mobile" id="mobileNav" data-nav aria-label="Mobile menu">
+    <a href="/">Home</a>
     <a href="/programs/">Programs</a>
     <a href="/get-involved/">Get involved</a>
     <a href="/governance/">Governance</a>
     <a href="/scope/">Scope</a>
-    <a href="/privacy/">Privacy</a>
     <a href="/contact/">Contact</a>
-
-    <div class="mobile-cta">
-      <a class="btn btn-outline" href="/get-involved/">Get involved</a>
-      <a class="btn btn-primary" href="/donate/">Donate</a>
-    </div>
+    <a href="/donate/">Donate</a>
   </div>
 </header>
