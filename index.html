@@ -4,741 +4,49 @@
   <meta charset="UTF-8" />
   <title>The 777 Foundation Society – Survivor-led support for newcomers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="The 777 Foundation Society is a grassroots, survivor-led non-profit in British Columbia, Canada. We create trauma-informed, peer-led spaces, legal advocacy, emotional resilience programs, and community outreach for newcomers and marginalized workers facing systemic mistreatment."
-  />
-  <style>
-    :root {
-      --bg: #050814;
-      --bg-soft: #080d1c;
-      --card: #101426;
-      --accent: #f5c153;
-      --accent-soft: rgba(245, 193, 83, 0.12);
-      --text: #f7f7fb;
-      --muted: #a3a7c4;
-      --border-soft: rgba(255,255,255,0.08);
-      --radius-lg: 18px;
-      --radius-sm: 999px;
-      --shadow-soft: 0 24px 60px rgba(0,0,0,0.5);
-      --max-width: 1120px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 0% 0%, #202a4b 0, #050814 40%) fixed,
-        radial-gradient(circle at 100% 100%, #1a2742 0, #050814 40%) fixed;
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* NAV */
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(
-        to bottom,
-        rgba(5, 8, 20, 0.96),
-        rgba(5, 8, 20, 0.7)
-      );
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: conic-gradient(
-        from 200deg,
-        #f5c153,
-        #f08f2a,
-        #f5c153,
-        #ffe6a8
-      );
-      box-shadow: 0 0 40px rgba(245,193,83,0.55);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 15px;
-      color: #1a1307;
-    }
-
-    .logo-main {
-      font-weight: 650;
-      letter-spacing: 0.08em;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .logo-sub {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      font-size: 13px;
-    }
-
-    .nav-links a {
-      position: relative;
-      color: var(--muted);
-      padding: 6px 0;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f5c153, #f0a72a);
-      transition: width 0.18s ease-out;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      border-radius: var(--radius-sm);
-      border: 1px solid transparent;
-      padding: 7px 16px;
-      font-size: 13px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.16s ease-out;
-    }
-
-    .btn-outline {
-      border-color: var(--border-soft);
-      background: rgba(10,14,32,0.85);
-      color: var(--muted);
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(255,255,255,0.22);
-      color: var(--text);
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #f5c153, #f0a72a);
-      color: #191208;
-      font-weight: 600;
-      box-shadow: 0 12px 30px rgba(245,193,83,0.45);
-    }
-
-    .btn-primary:hover {
-      filter: brightness(1.04);
-      box-shadow: 0 16px 40px rgba(245,193,83,0.6);
-      transform: translateY(-1px);
-    }
-
-    main { flex: 1; }
-
-    .section {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 32px 20px;
-    }
-
-    /* BACKGROUND ORBITS */
-
-    .orbits {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.5;
-      z-index: -1;
-    }
-
-    .orbit {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,193,83,0.22), transparent 60%);
-      filter: blur(8px);
-      animation: float 16s ease-in-out infinite alternate;
-    }
-
-    .orbit.o1 {
-      width: 520px; height: 520px;
-      top: -120px; left: -80px;
-    }
-
-    .orbit.o2 {
-      width: 420px; height: 420px;
-      bottom: -120px; right: -40px;
-      animation-duration: 22s;
-    }
-
-    @keyframes float {
-      from { transform: translate3d(0, 0, 0); }
-      to   { transform: translate3d(20px, -24px, 0); }
-    }
-
-    /* HERO */
-
-    .hero {
-      padding-top: 42px;
-      padding-bottom: 40px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      background: rgba(40, 196, 140, 0.14);
-      border: 1px solid rgba(40, 196, 140, 0.35);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #92f6c3;
-      margin-bottom: 14px;
-    }
-
-    .hero-tag-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #4af0b2;
-      box-shadow: 0 0 16px rgba(74, 240, 178, 1);
-    }
-
-    .hero-title {
-      font-size: clamp(30px, 4vw, 40px);
-      line-height: 1.1;
-      margin-bottom: 10px;
-    }
-
-    .hero-highlight { color: var(--accent); }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 16px;
-    }
-
-    .hero-triple {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .hero-pill {
-      background: rgba(8, 12, 32, 0.94);
-      border-radius: 12px;
-      border: 1px solid var(--border-soft);
-      padding: 8px 10px;
-      font-size: 11px;
-    }
-
-    .hero-pill-title {
-      font-weight: 600;
-      font-size: 11px;
-      margin-bottom: 2px;
-    }
-
-    .hero-pill-text {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .hero-note {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .hero-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 14px;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .hero-stat {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(5,8,20,0.85);
-      display: inline-flex;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .hero-stat span:first-child {
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .hero-right {
-      position: relative;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,0.09);
-      padding: 18px;
-      box-shadow: var(--shadow-soft);
-      background:
-        linear-gradient(145deg, rgba(16,20,52,0.98), rgba(9,12,32,0.98));
-      overflow: hidden;
-    }
-
-    .hero-right::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0 0, rgba(245,193,83,0.15), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(86,205,255,0.13), transparent 55%);
-      opacity: 0.6;
-      pointer-events: none;
-    }
-
-    .hero-right-inner {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .hero-card {
-      background: rgba(5, 8, 24, 0.9);
-      border-radius: 18px;
-      border: 1px solid var(--border-soft);
-      padding: 14px 14px 12px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
-    }
-
-    .hero-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
-    }
-
-    .hero-card-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .hero-card-main {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .pill {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      background: rgba(15,22,52,0.9);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
-    }
-
-    .hero-card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .hero-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      background: rgba(245,193,83,0.12);
-      border: 1px solid rgba(245,193,83,0.5);
-      font-size: 11px;
-      color: var(--accent);
-    }
-
-    .hero-locale {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .hero-photo {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border-soft);
-    }
-
-    .hero-photo img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      max-height: 180px;
-    }
-
-    .hero-caption {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .scroll-hint {
-      margin-top: 8px;
-      font-size: 11px;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .scroll-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      animation: pulse 1.2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.6; }
-      50% { transform: scale(1.4); opacity: 1; }
-      100%{ transform: scale(1); opacity: 0.6; }
-    }
-
-    /* SECTION GENERIC */
-
-    .section-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 18px;
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-size: 18px;
-    }
-
-    .section-subtitle {
-      font-size: 12px;
-      color: var(--muted);
-      max-width: 460px;
-    }
-
-    .cards-3,
-    .cards-4 {
-      display: grid;
-      gap: 16px;
-    }
-
-    .cards-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .cards-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 14px 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      box-shadow: 0 14px 38px rgba(0,0,0,0.45);
-    }
-
-    .card-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--muted);
-    }
-
-    .card-title {
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .card-body {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .card-footer {
-      margin-top: 6px;
-      font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .card-link {
-      font-size: 12px;
-      color: var(--accent);
-    }
-
-    .badge {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-soft);
-      color: var(--muted);
-    }
-
-    .card-icon {
-      font-size: 20px;
-    }
-
-    .dual {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 16px;
-      margin-top: 8px;
-    }
-
-    .panel {
-      background: var(--bg-soft);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 16px 16px 18px;
-    }
-
-    .panel h3 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .panel p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0 0 8px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .list li {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .list li::before {
-      content: "•";
-      color: var(--accent);
-      margin-top: 0;
-    }
-
-    .pill-row-soft {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 11px;
-    }
-
-    .pill-soft {
-      padding: 3px 10px;
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-    }
-
-    /* ABOUT STRIP */
-
-    .about-strip {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 16px;
-      margin-top: 10px;
-    }
-
-    .about-highlight {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .about-labels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .about-pill {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: rgba(255,255,255,0.02);
-      color: var(--muted);
-    }
-
-    /* FOOTER */
-
-    .footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      margin-top: 24px;
-      padding: 16px 20px 20px;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-      justify-content: space-between;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    @media (max-width: 980px) {
-      .hero,
-      .dual,
-      .trust-grid,
-      .about-strip {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 780px) {
-      .nav-inner { padding-inline: 14px; }
-      .nav-links { display: none; }
-      .hero { padding-inline: 14px; }
-      .section { padding-inline: 14px; }
-      .cards-3 { grid-template-columns: minmax(0, 1fr); }
-      .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .hero-triple { grid-template-columns: minmax(0, 1fr); }
-    }
-
-    @media (max-width: 520px) {
-      .cards-4 { grid-template-columns: minmax(0, 1fr); }
-    }
-  </style>
+  <meta name="description" content="The 777 Foundation Society is a grassroots, survivor-led non-profit in British Columbia, Canada. We create trauma-informed, peer-led spaces, rights navigation, resilience programs, and community outreach for newcomers and marginalized workers." />
+  <meta property="og:title" content="The 777 Foundation Society" />
+  <meta property="og:description" content="Survivor-led, trauma-informed support and rights navigation for newcomers and marginalized workers in BC." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/assets/777-shell.css" />
 </head>
 <body>
 <div class="page">
-  <div class="orbits">
-    <div class="orbit o1"></div>
-    <div class="orbit o2"></div>
-  </div>
+  <div class="orbits"><div class="orbit o1"></div><div class="orbit o2"></div></div>
 
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
       <div class="nav-left">
-        <div class="logo-mark">777</div>
+        <a class="logo-mark" href="index.html" aria-label="Home">777</a>
         <div>
           <div class="logo-main">The 777 Foundation Society</div>
           <div class="logo-sub">Grassroots · Survivor-led · BC</div>
         </div>
       </div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#approach">Approach</a>
-        <a href="#trust">Structure</a>
-        <a href="#contact">Contact</a>
+
+      <nav class="nav-links" data-nav>
+        <a href="index.html">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="get-involved.html">Get involved</a>
+        <a href="governance.html">Governance</a>
+        <a href="contact.html">Contact</a>
       </nav>
+
       <div class="nav-right">
-        <a href="#get-involved" class="btn btn-outline">Get involved</a>
-        <a href="Donate.html" class="btn btn-primary">Donate</a>
+        <button id="burger" class="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+        <a href="get-involved.html" class="btn btn-outline">Volunteer</a>
+        <a href="donate.html" class="btn btn-primary">Donate</a>
       </div>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav" data-nav>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="get-involved.html">Get involved</a>
+      <a href="governance.html">Governance</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
     </div>
   </header>
 
@@ -746,414 +54,175 @@
     <!-- HERO -->
     <section class="section hero">
       <div>
-        <div class="hero-tag">
-          <span class="hero-tag-dot"></span>
-          <span>Survivor-led non-profit · British Columbia</span>
-        </div>
+        <div class="hero-tag"><span class="hero-tag-dot"></span><span>Survivor-led non-profit · British Columbia</span></div>
         <h1 class="hero-title">
-          A grassroots foundation for <span class="hero-highlight">dignity and justice</span> in the lives of newcomers and marginalized workers.
+          A grassroots foundation for <span class="hero-highlight">dignity, safety, and justice</span> for newcomers and marginalized workers.
         </h1>
         <p class="hero-subtitle">
-          The 777 Foundation Society is a survivor-led, trauma-informed non-profit organisation in British Columbia.
-          We design and deliver peer-led programs, legal advocacy support, emotional resilience activities, and
-          outreach initiatives for newcomers and marginalized workers who are experiencing or at risk of systemic mistreatment.
+          We provide trauma-informed, peer-led support and rights navigation for people facing exploitation, exclusion,
+          and system stress. Our focus is practical: stabilise, document, understand options, and move forward safely.
         </p>
-
-        <div class="hero-triple">
-          <div class="hero-pill">
-            <div class="hero-pill-title">Primary population</div>
-            <div class="hero-pill-text">
-              Newcomers, migrant workers, and other marginalized workers in BC who face unsafe, exploitative,
-              or exclusionary conditions.
-            </div>
-          </div>
-          <div class="hero-pill">
-            <div class="hero-pill-title">Core mandate</div>
-            <div class="hero-pill-text">
-              To provide safe, peer-led spaces; improve access to rights information; and support navigation of
-              legal and institutional processes.
-            </div>
-          </div>
-          <div class="hero-pill">
-            <div class="hero-pill-title">Practice lens</div>
-            <div class="hero-pill-text">
-              Survivor-led, trauma-informed, evidence-aware, and aligned with existing community and legal resources.
-            </div>
-          </div>
-        </div>
 
         <div class="hero-actions">
-          <a href="#Donate" class="btn btn-primary">Explore funding or partnership</a>
-          <a href="#get-involved" class="btn btn-outline">Volunteer / collaborate</a>
+          <a href="programs.html" class="btn btn-primary">View programs</a>
+          <a href="get-involved.html" class="btn btn-outline">Volunteer / collaborate</a>
+          <a href="donate.html" class="btn btn-outline">Funding / grants</a>
         </div>
+
         <p class="hero-note">
-          Early-stage non-profit society in British Columbia · developing pilot programs and partnership models for 2026.
+          Pilot-phase Society in British Columbia · building capacity for 2026 programs and partnerships.
         </p>
 
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span>4</span><span>integrated program streams</span>
+        <div class="dual" style="margin-top:14px;">
+          <div class="panel">
+            <h3>Who we serve</h3>
+            <ul class="list">
+              <li>Newcomers and migrant workers navigating unsafe or exploitative conditions.</li>
+              <li>People experiencing rights confusion, retaliation fears, or isolation while seeking help.</li>
+              <li>Individuals interacting with complaint systems (employment, human rights, compensation, etc.).</li>
+            </ul>
           </div>
-          <div class="hero-stat">
-            <span>Survivor-led</span><span>governance and program design</span>
+          <div class="panel">
+            <h3>What we do (in plain language)</h3>
+            <ul class="list">
+              <li>Peer-led groups with boundaries and facilitation (not unstructured disclosure).</li>
+              <li>Rights navigation and documentation readiness (not legal representation).</li>
+              <li>Resilience tools to reduce isolation and improve coping during system processes.</li>
+            </ul>
           </div>
-          <div class="hero-stat">
-            <span>BC-focused</span><span>with remote participation options</span>
-          </div>
-        </div>
-        <div class="scroll-hint">
-          <span class="scroll-dot"></span> Scroll to view mandate, programs, and structure
         </div>
       </div>
 
       <aside class="hero-right">
         <div class="hero-right-inner">
           <div class="hero-card">
-            <div class="hero-card-title">PROGRAM OVERVIEW</div>
+            <div class="hero-card-title">PILOT MODEL</div>
             <div class="hero-card-main">
-              A coordinated set of peer-led, advocacy, resilience, and outreach activities aimed at increasing safety,
-              agency, and system literacy for newcomers and marginalized workers.
+              Small cohorts → structured intake → clear scope → safe referrals → pattern-level learning.
             </div>
             <div class="pill-row">
-              <div class="pill">Peer-led support networks</div>
-              <div class="pill">Legal advocacy and navigation</div>
-              <div class="pill">Emotional resilience activities</div>
-              <div class="pill">Community outreach and awareness</div>
+              <div class="pill">Trauma-informed</div>
+              <div class="pill">Privacy-first</div>
+              <div class="pill">Peer-led facilitation</div>
+              <div class="pill">Rights navigation</div>
             </div>
             <div class="hero-card-footer">
-              <div class="hero-chip">⬤ Grassroots · Survivor-led</div>
-              <div class="hero-locale">Vancouver · BC · Remote-friendly</div>
+              <div class="hero-chip">⬤ BC-focused · Remote-friendly</div>
+              <div>Vancouver, BC</div>
             </div>
           </div>
+
           <div class="hero-photo">
             <img
-              src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1000&q=80"
+              src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80"
               alt="Vancouver skyline and community by the water"
               loading="lazy"
             />
           </div>
+
           <p class="hero-caption">
-            The Society operates at the intersection of lived experience and formal systems, providing structured
-            support to individuals who are otherwise navigating these environments alone.
+            Our work complements existing legal, settlement, and health services by improving readiness, clarity, and safety.
           </p>
         </div>
       </aside>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
+    <!-- WHAT MAKES US DIFFERENT -->
+    <section class="section">
       <div class="section-title-row">
-        <h2 class="section-title">Organisation summary</h2>
+        <h2 class="section-title">How we’re different</h2>
         <p class="section-subtitle">
-          The 777 Foundation Society is a grassroots, survivor-led non-profit based in British Columbia, Canada.
-          Our work focuses on trauma-informed, peer-led support and rights-based advocacy for newcomers and marginalized workers.
-        </p>
-      </div>
-      <div class="about-strip">
-        <div>
-          <p class="about-highlight">
-            The Society was established in response to first-hand experiences of systemic mistreatment and gaps in support
-            for newcomers and workers engaged with employment, human rights, and compensation systems in BC. Our mandate
-            is to create safe, structured spaces where individuals can stabilise, understand their options, and make
-            informed decisions about next steps.
-          </p>
-          <p class="about-highlight" style="margin-top:8px;">
-            All core activities are informed by lived experience, trauma-informed practice, and an explicit commitment
-            to dignity, privacy, and non-exploitation of stories. The organisation aims to complement – not duplicate –
-            existing legal, settlement, and mental health services.
-          </p>
-        </div>
-        <div>
-          <div class="about-labels">
-            <span class="about-pill">Grassroots & survivor-led</span>
-            <span class="about-pill">Trauma-informed practice</span>
-            <span class="about-pill">Peer-led program delivery</span>
-            <span class="about-pill">Legal advocacy orientation</span>
-            <span class="about-pill">Rights & system literacy</span>
-            <span class="about-pill">Community engagement & outreach</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROGRAMS -->
-    <section id="programs" class="section">
-      <div class="section-title-row">
-        <h2 class="section-title">Program streams</h2>
-        <p class="section-subtitle">
-          The Society’s work is organised into four interconnected streams. Together they provide emotional stabilisation,
-          system navigation support, and public awareness grounded in lived experience.
+          Designed to be useful in real life: clear scope, safe process, and practical outputs.
         </p>
       </div>
 
-      <div class="cards-4">
+      <div class="cards-3">
         <article class="card">
-          <div class="card-tag">Stream 1 · Peer-led</div>
-          <div class="card-title">
-            <span class="card-icon">🤝</span> Peer-led Programs
-          </div>
+          <div class="card-tag">Process</div>
+          <div class="card-title"><span class="card-icon">🧭</span> Navigation, not noise</div>
           <p class="card-body">
-            Facilitated, peer-led groups and support networks where individuals with shared lived experience
-            can connect, debrief, and receive structured guidance. Sessions prioritise safety, boundaries,
-            and practical problem-solving rather than unstructured disclosure.
+            We help participants organise timelines, documents, and options so interactions with institutions are safer and clearer.
           </p>
-          <div class="card-footer">
-            <span class="badge">Trauma-informed groups</span>
-            <a href="#get-involved" class="card-link">Peer facilitator interest →</a>
-          </div>
+          <div class="card-footer"><span class="badge">Readiness focus</span><a class="card-link" href="programs.html">Programs →</a></div>
         </article>
 
         <article class="card">
-          <div class="card-tag">Stream 2 · Legal advocacy</div>
-          <div class="card-title">
-            <span class="card-icon">⚖️</span> Legal Advocacy Support
-          </div>
+          <div class="card-tag">Safety</div>
+          <div class="card-title"><span class="card-icon">🛡️</span> Boundaries and safeguarding</div>
           <p class="card-body">
-            Individual and small-group support focused on documentation, preparation, and navigation of legal
-            and quasi-legal processes (e.g. employment standards, human rights, workers’ compensation).
-            The Society does not provide legal representation but enhances readiness and system literacy.
+            Groups are facilitated with explicit boundaries. We avoid sensationalising stories and prioritise privacy and consent.
           </p>
-          <div class="card-footer">
-            <span class="badge">System navigation</span>
-            <a href="#approach" class="card-link">Advocacy approach →</a>
-          </div>
+          <div class="card-footer"><span class="badge">Privacy-first</span><a class="card-link" href="governance.html">Safeguards →</a></div>
         </article>
 
         <article class="card">
-          <div class="card-tag">Stream 3 · Emotional resilience</div>
-          <div class="card-title">
-            <span class="card-icon">🕊️</span> Emotional Resilience Work
-          </div>
+          <div class="card-tag">Impact</div>
+          <div class="card-title"><span class="card-icon">📎</span> Practical outputs</div>
           <p class="card-body">
-            Structured activities, reflective tools, and simple practices designed to strengthen coping capacity,
-            restore a sense of agency, and reduce isolation during and after engagement with formal systems.
-            This stream is delivered in coordination with, not in place of, clinical support.
+            Participants leave with clearer next steps, documentation readiness, and referral pathways—measurable, not vague.
           </p>
-          <div class="card-footer">
-            <span class="badge">Resilience & coping</span>
-            <a href="#approach" class="card-link">Practice principles →</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">Stream 4 · Outreach</div>
-          <div class="card-title">
-            <span class="card-icon">📣</span> Community Engagement & Outreach
-          </div>
-          <p class="card-body">
-            Story-based outreach, community education, and awareness initiatives that highlight recurring patterns
-            of harm and exclusion faced by newcomers and marginalized workers, with the aim of informing institutions,
-            employers, and the public while protecting individual identities.
-          </p>
-          <div class="card-footer">
-            <span class="badge">Stories & campaigns</span>
-            <a href="#get-involved" class="card-link">Outreach partnerships →</a>
-          </div>
+          <div class="card-footer"><span class="badge">Outcome-oriented</span><a class="card-link" href="get-involved.html">Support us →</a></div>
         </article>
       </div>
     </section>
 
-    <!-- APPROACH -->
-    <section id="approach" class="section">
+    <!-- PILOT IMPACT METRICS -->
+    <section class="section">
       <div class="section-title-row">
-        <h2 class="section-title">Approach and methodology</h2>
+        <h2 class="section-title">Pilot measures (what we track)</h2>
         <p class="section-subtitle">
-          The Society’s approach combines survivor leadership, trauma-informed practice, peer support, and
-          rights-based advocacy. This framework shapes program design, intake, facilitation, and evaluation.
+          Early-stage measurement focuses on safety, stabilisation, and readiness (not inflated claims).
         </p>
       </div>
 
       <div class="dual">
         <div class="panel">
-          <h3>Guiding principles</h3>
+          <h3>Participant outcomes</h3>
           <ul class="list">
-            <li>Survivor-led governance and program design, with lived experience embedded in decision-making.</li>
-            <li>Trauma-informed practice that centres safety, consent, pacing, and choice at every stage.</li>
-            <li>Peer-led structures that complement, rather than replace, professional services and legal counsel.</li>
-            <li>Plain-language communication to reduce barriers to understanding complex policies and procedures.</li>
-          </ul>
-          <p style="font-size:12px; color:var(--muted); margin-top:4px;">
-            Programs are intentionally small-scale in the pilot phase to allow for careful refinement and documentation
-            before expansion or replication.
-          </p>
-        </div>
-
-        <div class="panel">
-          <h3>Use of lived-experience data</h3>
-          <p>
-            The Society works with anonymised, pattern-level information from participants’ experiences to inform
-            program improvements, advocacy priorities, and outreach content. Individual stories are not published
-            or shared externally without explicit consent and robust safeguards.
-          </p>
-          <ul class="list">
-            <li>Information is de-identified, aggregated, and used to identify trends and gaps in existing systems.</li>
-            <li>Any public-facing materials are reviewed through an internal ethics and safety lens.</li>
-            <li>The aim is to inform policy and practice conversations, not to sensationalise or expose participants.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- GET INVOLVED / DONATE -->
-    <section id="get-involved" class="section">
-      <div class="section-title-row">
-        <h2 class="section-title">Funding and involvement</h2>
-        <p class="section-subtitle">
-          The Society is currently in a pilot and capacity-building phase and is seeking aligned funders,
-          partners, and volunteers to support the development of sustainable program infrastructure.
-        </p>
-      </div>
-
-      <div class="dual">
-        <div class="panel" id="Donate">
-          <h3>Funding priorities</h3>
-          <p>
-            Early-stage funding will be allocated to core infrastructure and program design, including:
-            coordination capacity, supervision, interpretation and translation, materials, and participant supports.
-          </p>
-          <ul class="list">
-            <li>Program development and facilitation (peer-led groups and resilience activities).</li>
-            <li>Legal advocacy support tools (templates, guides, documentation frameworks).</li>
-            <li>Community outreach and awareness materials targeted to newcomers and service providers.</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary">Discuss grants or partnership</a>
-          <p style="font-size:11px; color:var(--muted); margin-top:8px;">
-            Formal donation processing (e.g. Stripe / PayPal / CanadaHelps) is in development. At this stage,
-            institutional funders and donors are invited to contact the Society directly to discuss funding
-            mechanisms, reporting expectations, and alignment with their priorities.
-          </p>
-        </div>
-
-        <div class="panel">
-          <h3>Volunteer and professional involvement</h3>
-          <p>
-            The Society is establishing a small, stable cohort of volunteers and professional allies
-            to support program delivery and governance.
-          </p>
-          <ul class="list">
-            <li>Legal, policy, and advocacy professionals to advise on content and case navigation frameworks.</li>
-            <li>Mental health and social service providers to inform trauma-informed practice and referral pathways.</li>
-            <li>Community organisers, designers, and storytellers to support outreach and educational materials.</li>
-            <li>Non-profit operations, evaluation, and governance advisors to strengthen organisational infrastructure.</li>
+            <li>Clarity: participant can describe options and next steps in plain language.</li>
+            <li>Readiness: basic documentation and timeline organised for external support.</li>
+            <li>Connection: reduced isolation via safe peer network and referrals.</li>
+            <li>Stability: basic coping plan for system stress (sleep, routines, supports).</li>
           </ul>
           <div class="pill-row-soft">
-            <span class="pill-soft">Approx. 2–4 hours / month</span>
-            <span class="pill-soft">Remote & hybrid participation</span>
-            <span class="pill-soft">BC-based priority</span>
+            <span class="pill-soft">Intake → check-in → exit review</span>
+            <span class="pill-soft">Aggregated reporting</span>
+            <span class="pill-soft">No public case details</span>
           </div>
-          <p style="font-size:12px; color:var(--muted); margin-top:8px;">
-            Prospective volunteers and advisors are invited to share a brief overview of their background,
-            area of expertise, and realistic availability.
-          </p>
-          <a href="#contact" class="card-link">Contact the Society →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST & STRUCTURE -->
-    <section id="trust" class="section">
-      <div class="section-title-row">
-        <h2 class="section-title">Governance, structure, and scope</h2>
-        <p class="section-subtitle">
-          Transparency about governance and scope is central to the Society’s model. The organisation is
-          intentionally clear about what it can offer and where it has limitations.
-        </p>
-      </div>
-
-      <div class="trust-grid">
-        <div class="panel">
-          <h3>Organisational structure</h3>
-          <ul class="list">
-            <li>Registered as a non-profit society in British Columbia (The 777 Foundation Society).</li>
-            <li>Based in Vancouver, with services currently focused on newcomers and marginalized workers in BC.</li>
-            <li>Governed by a volunteer board of directors and supported by lived-experience advisors.</li>
-            <li>Committed to trauma-informed, privacy-conscious, and culturally responsive practice across all activities.</li>
-          </ul>
-          <p style="font-size:12px; color:var(--muted); margin-top:4px;">
-            As the organisation progresses through its pilot phase, it will publish board composition,
-            key policies (e.g. privacy, safeguarding, conflict of interest), and annual high-level impact summaries.
-          </p>
         </div>
 
         <div class="panel">
-          <h3>Scope of support and limitations</h3>
+          <h3>System learning</h3>
           <ul class="list">
-            <li>The Society provides peer-led support, information, and advocacy orientation. It does not provide legal representation or clinical therapy.</li>
-            <li>Staff and volunteers assist participants to organise information, understand options, and prepare for engagement with formal services.</li>
-            <li>The organisation does not operate as an emergency or crisis response service.</li>
-            <li>Where needs fall outside the Society’s scope, individuals are supported to connect with appropriate services.</li>
+            <li>Recurring barriers and “drop-off points” across service pathways.</li>
+            <li>Patterns of harm and confusion (de-identified and aggregated).</li>
+            <li>Which referrals actually work (time, accessibility, outcomes).</li>
           </ul>
-          <p style="font-size:12px; color:var(--muted); margin-top:4px;">
-            This clear scope is designed to protect participants, volunteers, and partners and to maintain
-            realistic expectations of what the organisation can safely deliver.
+          <p style="font-size:12px; color:var(--muted);">
+            Findings inform outreach and partner conversations without exposing individuals.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="section-title-row">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">
-          For funding, partnership, or participation enquiries, the Society currently uses an email-first intake
-          process to ensure privacy and appropriate routing.
-        </p>
-      </div>
-
+    <!-- CTA STRIP -->
+    <section class="section">
       <div class="dual">
         <div class="panel">
-          <h3>Primary contact channel</h3>
+          <h3>Are you a funder or partner?</h3>
           <p>
-            In the initial message, individuals and organisations are asked
-            <strong>not to include full names, addresses, or employer identifiers</strong>.
-            A brief description of the situation, request, or proposed collaboration is sufficient for an initial response.
+            We’re building pilot capacity for 2026. We welcome aligned funders, legal/community partners, and operational allies.
           </p>
-          <p style="font-size:13px; margin-top:8px;">
-            Email:
-            <a href="mailto:contact@the777foundation.org?subject=The%20777%20Foundation%20Society%20%2D%20Enquiry">
-              contact@the777foundation.org
-            </a><br /><br />
-            Location: Vancouver, British Columbia, Canada
-          </p>
-          <p style="font-size:11px; color:var(--muted); margin-top:8px;">
-            The Society is not an emergency or crisis service. Individuals in immediate danger or acute distress
-            should contact emergency services or a local crisis line before reaching out to the organisation.
-          </p>
+          <a class="btn btn-primary" href="donate.html">Funding priorities</a>
+          <a class="btn btn-outline" href="contact.html" style="margin-left:8px;">Contact</a>
         </div>
 
         <div class="panel">
-          <h3>Short interest form</h3>
-          <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">
-            This form can be used to generate a pre-filled email. It does not transmit data by itself; it simply
-            opens the user’s email client with structured text to support clear communication.
+          <h3>Do you want to volunteer?</h3>
+          <p>
+            We’re forming a small cohort of volunteer and professional allies (2–4 hours/month) with a stable, safe process.
           </p>
-          <form id="contact-form">
-            <div style="display:flex; flex-direction:column; gap:8px; font-size:12px;">
-              <input
-                type="text"
-                id="name"
-                placeholder="Name (optional or first name only)"
-                style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--text);"
-              />
-              <select
-                id="role"
-                style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--muted);"
-              >
-                <option value="Newcomer / worker">I’m a newcomer / worker</option>
-                <option value="Volunteer / ally">I want to volunteer / collaborate</option>
-                <option value="Organisation / funder">I represent an organisation / funder</option>
-                <option value="Other">Other</option>
-              </select>
-              <textarea
-                id="message"
-                rows="3"
-                placeholder="Short note (no full names, addresses, or employer details here)"
-                style="padding:8px 10px; border-radius:10px; border:1px solid var(--border-soft); background:#050814; color:var(--text); resize:vertical;"
-              ></textarea>
-              <button type="submit" class="btn btn-outline">Prepare email</button>
-            </div>
-          </form>
+          <a class="btn btn-outline" href="get-involved.html">Volunteer roles</a>
         </div>
       </div>
     </section>
@@ -1162,48 +231,16 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div>
-        © <span id="year"></span> The 777 Foundation Society · Vancouver, BC · All rights reserved.
-      </div>
+      <div>© <span id="year"></span> The 777 Foundation Society · Vancouver, BC · All rights reserved.</div>
       <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
         <span>Grassroots, survivor-led non-profit</span>
-        <span>Pilot-phase landing page for outreach and funding enquiries</span>
+        <span>Pilot-phase outreach and partnerships</span>
       </div>
     </div>
   </footer>
 </div>
 
-<script>
-  // Year
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Simple mailto builder
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var name = document.getElementById("name").value.trim();
-    var role = document.getElementById("role").value;
-    var msg  = document.getElementById("message").value.trim();
-
-    var subject = "The 777 Foundation Society – " + role + " enquiry";
-    var bodyParts = [];
-
-    if (name) bodyParts.push("Name: " + name);
-    bodyParts.push("Role: " + role);
-    if (msg) bodyParts.push("\nSummary:\n" + msg);
-
-    bodyParts.push(
-      "\n(Please do not include full names, addresses, or employer identifiers in this first email.)"
-    );
-
-    var body = encodeURIComponent(bodyParts.join("\n"));
-    var mailto =
-      "mailto:contact@the777foundation.org?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      body;
-    window.location.href = mailto;
-  });
-</script>
+<script src="/assets/777-shell.js"></script>
 </body>
 </html>
-
