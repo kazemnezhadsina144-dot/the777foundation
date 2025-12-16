@@ -1,3 +1,4 @@
+<!-- /contact/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,24 +7,45 @@
   <title>Contact – The 777 Foundation Society</title>
   <meta name="description" content="Email-first contact for funding, partnerships, volunteer interest, or participation. Privacy-first routing." />
   <link rel="canonical" href="https://www.the777foundation.org/contact/" />
+
   <meta property="og:site_name" content="The 777 Foundation Society" />
   <meta property="og:title" content="Contact – The 777 Foundation Society" />
   <meta property="og:description" content="Email-first contact to protect privacy and route appropriately." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.the777foundation.org/contact/" />
   <meta property="og:image" content="https://www.the777foundation.org/assets/og/og-777.png" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#050814" />
+
   <link rel="manifest" href="/assets/site.webmanifest" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/favicon-512.png" />
   <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon-192.png" />
+
   <link rel="stylesheet" href="/assets/777-shell.css" />
+
+  <style>
+    /* Page-only: form controls (safe if 777-shell.css does not style inputs) */
+    .input, .select, .textarea{
+      width:100%;
+      padding:10px 11px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(5,8,20,0.75);
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+      outline:none;
+    }
+    .textarea{resize:vertical; min-height:110px}
+    .label{display:block; margin:0 0 6px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted, rgba(255,255,255,.70))}
+  </style>
 </head>
 <body>
   <div class="page">
-    <div id="site-header"></div>
+    <!-- Header injected by /assets/777-shell.js -->
+    <div id="site-header" data-active="/contact/"></div>
 
     <main id="main">
       <section class="section">
@@ -32,19 +54,32 @@
             <div class="kicker"><span class="kdot"></span><span>Email-first · privacy-first routing</span></div>
             <h1>Contact the Society <span style="color:var(--gold)">safely</span>.</h1>
             <p class="lead">
-              Funding, partnership, volunteer, or participation enquiries: email-first intake to protect privacy and route appropriately.
+              Funding, partnership, volunteer, or participation enquiries are handled by email-first intake to protect privacy and route appropriately.
             </p>
+
             <div class="nav__actions" style="margin-top:14px">
               <a class="btn btn--primary" href="mailto:contact@the777foundation.org?subject=The%20777%20Foundation%20Society%20-%20Enquiry">Email us</a>
               <a class="btn btn--ghost" href="/privacy/">Privacy</a>
+              <a class="btn btn--ghost" href="/scope/">Scope</a>
             </div>
-            <p class="note">Do not include full names, addresses, or employer identifiers in your first message.</p>
+
+            <p class="note">Please avoid full names, addresses, employer identifiers, or case-specific details in your first message.</p>
           </div>
 
           <aside class="panel">
             <div class="tag">Primary email</div>
-            <p style="margin-top:8px"><a class="link" href="mailto:contact@the777foundation.org?subject=The%20777%20Foundation%20Society%20-%20Enquiry">contact@the777foundation.org</a></p>
-            <div class="pills">
+            <p style="margin-top:8px">
+              <a class="link" href="mailto:contact@the777foundation.org?subject=The%20777%20Foundation%20Society%20-%20Enquiry">contact@the777foundation.org</a>
+            </p>
+
+            <div class="tag" style="margin-top:12px">Suggested subject lines</div>
+            <ul class="ul">
+              <li><a class="link" href="mailto:contact@the777foundation.org?subject=Enquiry%20-%20Participation">Enquiry - Participation</a></li>
+              <li><a class="link" href="mailto:contact@the777foundation.org?subject=Enquiry%20-%20Volunteer%20%2F%20Ally">Enquiry - Volunteer / Ally</a></li>
+              <li><a class="link" href="mailto:contact@the777foundation.org?subject=Enquiry%20-%20Funding%20%2F%20Partnership">Enquiry - Funding / Partnership</a></li>
+            </ul>
+
+            <div class="pills" style="margin-top:10px">
               <span class="pill">Funding</span><span class="pill">Partners</span><span class="pill">Volunteer</span><span class="pill">Routing</span>
             </div>
           </aside>
@@ -56,36 +91,88 @@
           <div class="panel">
             <h2>Before you write</h2>
             <ul class="ul">
-              <li>Keep first contact short (a few lines is enough)</li>
-              <li>Avoid identifying details in the first email</li>
-              <li>If urgent danger: emergency services first</li>
+              <li>Keep first contact short (a few lines is enough).</li>
+              <li>Do not include identifying details in the first email.</li>
+              <li>If there is immediate danger or acute distress, contact emergency/crisis services first.</li>
             </ul>
+            <p class="note" style="margin-top:10px">For privacy expectations and boundaries, see <a class="link" href="/privacy/">Privacy</a> and <a class="link" href="/scope/">Scope</a>.</p>
           </div>
 
           <div class="panel">
-            <h2>Quick interest form</h2>
+            <h2>Quick email builder</h2>
             <p class="note" style="margin-top:0">This form does not transmit data; it opens your email client with structured text.</p>
+
             <form id="contact-form" style="margin-top:10px">
               <div style="display:flex;flex-direction:column;gap:10px">
-                <input class="input" id="name" type="text" placeholder="Name (optional / first name only)" />
-                <select class="select" id="role">
-                  <option value="Newcomer / worker">I’m a newcomer / worker</option>
-                  <option value="Volunteer / ally">I want to volunteer / collaborate</option>
-                  <option value="Organisation / funder">I represent an organisation / funder</option>
-                  <option value="Other">Other</option>
-                </select>
-                <textarea class="textarea" id="message" rows="4" placeholder="Short note (avoid identifying details)"></textarea>
-                <button class="btn btn--ghost" type="submit">Prepare email</button>
+                <div>
+                  <label class="label" for="c_name">Name (optional)</label>
+                  <input class="input" id="c_name" type="text" placeholder="First name only is fine" autocomplete="given-name" />
+                </div>
+
+                <div>
+                  <label class="label" for="c_role">I am contacting about</label>
+                  <select class="select" id="c_role">
+                    <option value="Participation">Participation</option>
+                    <option value="Volunteer / Ally">Volunteer / Ally</option>
+                    <option value="Funding / Partnership">Funding / Partnership</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="label" for="c_message">Short note</label>
+                  <textarea class="textarea" id="c_message" placeholder="A few lines is enough. Avoid identifying details."></textarea>
+                </div>
+
+                <button class="btn btn--primary" type="submit">Prepare email</button>
               </div>
             </form>
+
+            <p class="note" style="margin-top:10px">Tip: add a preferred callback channel only if safe (email is the default).</p>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- Footer injected by /assets/777-shell.js -->
     <div id="site-footer"></div>
   </div>
 
   <script src="/assets/777-shell.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("contact-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var name = (document.getElementById("c_name").value || "").trim();
+        var topic = (document.getElementById("c_role").value || "Enquiry").trim();
+        var msg = (document.getElementById("c_message").value || "").trim();
+
+        var subject = "Enquiry - " + topic + (name ? " (" + name + ")" : "");
+        var body = [];
+        body.push("Hello The 777 Foundation Society,");
+        body.push("");
+        body.push("Topic: " + topic);
+        if (name) body.push("Name: " + name);
+        body.push("");
+        if (msg) {
+          body.push("Message:");
+          body.push(msg);
+          body.push("");
+        }
+        body.push("(Please avoid full names, addresses, employer identifiers, or case-specific details in the first message.)");
+
+        var mailto =
+          "mailto:contact@the777foundation.org" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body.join("\\n"));
+
+        window.location.href = mailto;
+      });
+    })();
+  </script>
 </body>
 </html>
