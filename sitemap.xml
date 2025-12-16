@@ -2,63 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.the777foundation.org/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.the777foundation.org/programs/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://www.the777foundation.org/donate/</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.the777foundation.org/get-involved/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.the777foundation.org/get-involved/funding-partnerships-lead/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.the777foundation.org/donate/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <loc>https://www.the777foundation.org/get-involved/mental-health-social-service-ally/</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.the777foundation.org/get-involved/outreach-design-storytelling/</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.the777foundation.org/get-involved/operations-governance-support/</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://www.the777foundation.org/governance/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://www.the777foundation.org/scope/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.the777foundation.org/privacy/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.the777foundation.org/contact/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
