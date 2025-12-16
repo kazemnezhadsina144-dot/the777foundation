@@ -1,122 +1,425 @@
-<!DOCTYPE html>
+<!-- /get-involved/index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The 777 Foundation Society – Survivor-led support in British Columbia</title>
-  <meta name="description" content="Survivor-led non-profit in British Columbia. Safety-informed peer cohorts, navigation and rights information (readiness support), resilience tools, and privacy-first community outreach (pilot phase)." />
-  <link rel="canonical" href="https://www.the777foundation.org/" />
 
-  <meta property="og:site_name" content="The 777 Foundation Society" />
-  <meta property="og:title" content="The 777 Foundation Society – Survivor-led support in British Columbia" />
-  <meta property="og:description" content="Safety-informed peer cohorts, navigation and rights information (readiness support), resilience tools, and privacy-first community outreach (pilot phase)." />
+  <title>Get involved | The 777 Foundation Society</title>
+  <meta name="description" content="Volunteer or collaborate with The 777 Foundation Society. Early pilot + capacity-building roles (2–4 hours/month). Funding & partnerships, legal/policy, mental health allies, outreach, and operations." />
+
+  <link rel="canonical" href="https://www.the777foundation.org/get-involved/" />
+  <meta property="og:title" content="Get involved | The 777 Foundation Society" />
+  <meta property="og:description" content="Volunteer or collaborate. Early pilot + capacity-building roles (2–4 hours/month). Funding & partnerships, legal/policy, mental health allies, outreach, and operations." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.the777foundation.org/" />
+  <meta property="og:url" content="https://www.the777foundation.org/get-involved/" />
   <meta property="og:image" content="https://www.the777foundation.org/assets/og/og-777.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <meta name="theme-color" content="#050814" />
-  <link rel="manifest" href="/assets/site.webmanifest" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/favicon-512.png" />
-  <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon-192.png" />
-  <link rel="stylesheet" href="/assets/777-shell.css" />
+  <link rel="stylesheet" href="/assets/777-shell.css?v=2025-12-15" />
+
+  <style>
+    /* Page-only (minimal; relies on 777-shell.css for global tokens/layout) */
+    .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+    .hero{padding:18px 0 10px}
+    .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,rgba(255,255,255,.70))}
+    .muted{color:var(--muted,rgba(255,255,255,.70))}
+    .lede{max-width:900px;font-size:14px;line-height:1.55}
+    .h1{margin:6px 0 8px;font-size:clamp(28px,4vw,40px);line-height:1.12}
+    .h2{font-size:18px;margin:0 0 8px}
+    .h3{font-size:15px;margin:0 0 8px}
+
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .pill{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);color:var(--muted,rgba(255,255,255,.70))}
+
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid transparent;text-decoration:none;cursor:pointer;font-size:13px;white-space:nowrap}
+    .btn-primary{background:linear-gradient(135deg,#f5c153,#f0a72a);color:#1a1307;font-weight:650;box-shadow:0 12px 30px rgba(245,193,83,.35)}
+    .btn-outline{border-color:rgba(255,255,255,.12);background:rgba(10,14,32,.75);color:rgba(255,255,255,.78)}
+    .btn-outline:hover{border-color:rgba(255,255,255,.22)}
+    .btn-link{border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:rgba(255,255,255,.86)}
+
+    .section{padding:10px 0 22px}
+    .card{background:var(--card,rgba(16,20,38,.9));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px}
+    .card.soft{background:rgba(255,255,255,.015)}
+    .grid{display:grid;gap:12px}
+
+    /* Responsive card grid */
+    .cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .list{margin:0;padding-left:18px;color:var(--muted,rgba(255,255,255,.72))}
+    .list li{margin:6px 0}
+
+    .rolelist{display:grid;gap:10px;margin-top:10px}
+    .roleitem{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:12px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02)}
+    .rolemeta{min-width:0}
+    .rolemeta strong{display:block;color:rgba(255,255,255,.92)}
+    .rolemeta span{display:block;font-size:12px;color:var(--muted,rgba(255,255,255,.70));margin-top:4px}
+
+    details{border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.02);padding:12px}
+    summary{cursor:pointer;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    .summary-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .caret{opacity:.85}
+
+    .form-row{display:grid;gap:10px;grid-template-columns:repeat(12,minmax(0,1fr))}
+    .field{grid-column:span 6}
+    .field.full{grid-column:span 12}
+    .input,.select,.textarea{
+      width:100%;
+      padding:10px 11px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(5,8,20,.75);
+      color:rgba(255,255,255,.92);
+      font-size:13px;
+      outline:none
+    }
+    .textarea{resize:vertical;min-height:110px}
+
+    @media (max-width:920px){
+      .field{grid-column:span 12}
+      .btn{white-space:normal}
+    }
+  </style>
 </head>
+
 <body>
-  <div class="page">
-    <div id="site-header"></div>
+  <!-- Header injected by /assets/777-shell.js -->
+  <div id="site-header" data-active="/get-involved/"></div>
 
-    <main id="main">
-      <section class="section">
-        <div class="container hero">
+  <main class="section">
+    <div class="wrap">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="kicker">Get involved • Volunteer • Collaborate</div>
+        <h1 class="h1">Volunteer & collaborate with The 777 Foundation Society</h1>
+        <p class="muted lede">
+          The Society is a survivor-led, trauma-informed non-profit in British Columbia building peer-led support networks,
+          advocacy orientation (not legal representation), resilience practices, and privacy-first outreach.
+          Current focus is early pilot + capacity-building with a small, stable cohort of volunteers and professional allies.
+        </p>
+
+        <div class="pillrow">
+          <span class="pill">2–4 hours / month</span>
+          <span class="pill">Remote-friendly</span>
+          <span class="pill">BC-based preferred</span>
+          <span class="pill">Dignity-first • privacy-first</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#roles">View roles</a>
+          <a class="btn btn-outline" href="#interest">Express interest</a>
+          <a class="btn btn-outline" href="/donate/">Support with funding</a>
+          <a class="btn btn-outline" href="/programs/">Program streams</a>
+        </div>
+
+        <p class="muted" style="font-size:12px;margin-top:10px;">
+          Note: This is not an emergency or crisis service. If there is immediate danger or acute distress, contact emergency services first.
+        </p>
+      </section>
+
+      <!-- ROLE DIRECTORY (linkable to new subpages) -->
+      <section id="roles" class="section">
+        <div class="grid" style="gap:10px;margin-bottom:12px;">
           <div>
-            <div class="kicker"><span class="kdot"></span><span>Survivor-led · safety-informed · British Columbia</span></div>
-            <h1>A community-based foundation for <span style="color:var(--gold)">dignity, safety, and fair access to support</span>.</h1>
-            <p class="lead">
-              We support newcomers and workers in precarious situations through structured peer cohorts, navigation and rights information (readiness support),
-              resilience tools, and de-identified community outreach. Pilot phase now—building capacity for 2026 programming as resources allow.
+            <h2 class="h2">Volunteer & collaboration roles</h2>
+            <p class="muted" style="font-size:13px;max-width:920px;">
+              Each role has a dedicated page with a clear brief, boundaries, and an email-first “express interest” path.
             </p>
+          </div>
+        </div>
 
-            <div class="nav__actions" style="margin-top:14px">
-              <a class="btn btn--primary" href="/programs/">View programs</a>
-              <a class="btn btn--ghost" href="/get-involved/">Volunteer or collaborate</a>
-              <a class="btn btn--ghost" href="/donate/">Fund the work</a>
+        <div class="rolelist">
+          <div class="roleitem">
+            <div class="rolemeta">
+              <strong>Funding & Partnerships Lead</strong>
+              <span>Pipeline ownership, funder relationships, proposals (outcomes > activity)</span>
             </div>
+            <div class="actions" style="margin-top:0;">
+              <a class="btn btn-primary" href="/get-involved/funding-partnerships-lead/">Open role page</a>
+            </div>
+          </div>
 
-            <p class="note">
-              No legal representation. No clinical diagnosis or therapy. If there is immediate danger, call 911 or local emergency services.
+          <div class="roleitem">
+            <div class="rolemeta">
+              <strong>Legal, Policy & Advocacy Ally</strong>
+              <span>Navigation frameworks + readiness tools (no representation)</span>
+            </div>
+            <div class="actions" style="margin-top:0;">
+              <a class="btn btn-link" href="/get-involved/legal-policy-advocacy-ally/">Open role page</a>
+            </div>
+          </div>
+
+          <div class="roleitem">
+            <div class="rolemeta">
+              <strong>Mental Health & Social Service Ally</strong>
+              <span>Safeguarding, trauma-informed guardrails, referral pathways (not clinical delivery)</span>
+            </div>
+            <div class="actions" style="margin-top:0;">
+              <a class="btn btn-link" href="/get-involved/mental-health-social-service-ally/">Open role page</a>
+            </div>
+          </div>
+
+          <div class="roleitem">
+            <div class="rolemeta">
+              <strong>Outreach, Design & Storytelling</strong>
+              <span>Privacy-first education and outreach assets; consent-first publishing</span>
+            </div>
+            <div class="actions" style="margin-top:0;">
+              <a class="btn btn-link" href="/get-involved/outreach-design-storytelling/">Open role page</a>
+            </div>
+          </div>
+
+          <div class="roleitem">
+            <div class="rolemeta">
+              <strong>Operations & Governance Support</strong>
+              <span>Policies, reporting, evaluation, board-ready tools, lightweight SOPs</span>
+            </div>
+            <div class="actions" style="margin-top:0;">
+              <a class="btn btn-link" href="/get-involved/operations-governance-support/">Open role page</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATHWAYS (cards with links to the role pages) -->
+      <section class="section">
+        <div class="grid cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+          <article class="card">
+            <div class="kicker">Priority role</div>
+            <h3 class="h3">Funding, Grants & Partnerships</h3>
+            <p class="muted" style="font-size:13px;">
+              Bring aligned resources into the Society. Own a small, serious pipeline and turn the mandate into fundable opportunities.
             </p>
+            <div class="pillrow">
+              <span class="pill">Connector</span><span class="pill">Pipeline</span><span class="pill">LOIs</span>
+            </div>
+            <div class="actions" style="margin-top:10px;">
+              <a class="btn btn-primary" href="/get-involved/funding-partnerships-lead/">Open role page</a>
+              <a class="btn btn-outline" href="#interest">Express interest</a>
+            </div>
+          </article>
 
-            <div class="split section--sm">
-              <div class="panel">
-                <h2>What we do</h2>
-                <ul class="ul">
-                  <li>Facilitated peer cohorts with clear boundaries and safeguarding.</li>
-                  <li>Navigation and rights information, plus documentation readiness support (not legal advice).</li>
-                  <li>Resilience tools designed to help reduce isolation and burnout.</li>
-                  <li>Referral pathways, with consent and privacy safeguards.</li>
-                </ul>
+          <article class="card">
+            <div class="kicker">Professional allies</div>
+            <h3 class="h3">Legal, Policy & Advocacy Allies</h3>
+            <p class="muted" style="font-size:13px;">
+              Help shape navigation frameworks and readiness tools for processes like employment standards and human rights (no representation).
+            </p>
+            <div class="pillrow">
+              <span class="pill">Plain-language</span><span class="pill">Readiness</span><span class="pill">Boundaries</span>
+            </div>
+            <div class="actions" style="margin-top:10px;">
+              <a class="btn btn-link" href="/get-involved/legal-policy-advocacy-ally/">Open role page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Professional allies</div>
+            <h3 class="h3">Mental Health & Social Service Allies</h3>
+            <p class="muted" style="font-size:13px;">
+              Strengthen trauma-informed guardrails, safeguarding, and referral pathways (not clinical service delivery inside the Society).
+            </p>
+            <div class="pillrow">
+              <span class="pill">Trauma-informed</span><span class="pill">Safeguarding</span><span class="pill">Referrals</span>
+            </div>
+            <div class="actions" style="margin-top:10px;">
+              <a class="btn btn-link" href="/get-involved/mental-health-social-service-ally/">Open role page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Outreach</div>
+            <h3 class="h3">Community Organisers, Designers & Storytellers</h3>
+            <p class="muted" style="font-size:13px;">
+              Create privacy-first outreach and education materials that highlight patterns while protecting identities and consent.
+            </p>
+            <div class="pillrow">
+              <span class="pill">Privacy-first</span><span class="pill">Campaigns</span><span class="pill">Education</span>
+            </div>
+            <div class="actions" style="margin-top:10px;">
+              <a class="btn btn-link" href="/get-involved/outreach-design-storytelling/">Open role page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Operations</div>
+            <h3 class="h3">Non-profit Operations & Governance Support</h3>
+            <p class="muted" style="font-size:13px;">
+              Help build early infrastructure: policies, evaluation, reporting, and board-ready tools. Keep it lightweight and usable.
+            </p>
+            <div class="pillrow">
+              <span class="pill">Policies</span><span class="pill">Reporting</span><span class="pill">Board tools</span>
+            </div>
+            <div class="actions" style="margin-top:10px;">
+              <a class="btn btn-link" href="/get-involved/operations-governance-support/">Open role page</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section">
+        <div class="grid cards" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr));">
+          <article class="card">
+            <h2 class="h2">How involvement works</h2>
+            <ol class="list" style="padding-left:20px;">
+              <li><strong>Pick a role</strong> and open the role page.</li>
+              <li><strong>Email-first</strong> interest (short, no sensitive identifiers).</li>
+              <li><strong>Routing</strong> to the right pathway.</li>
+              <li><strong>Start small</strong> with one defined contribution.</li>
+              <li><strong>Review</strong> after 4–8 weeks and adjust scope.</li>
+            </ol>
+            <p class="muted" style="font-size:12px;margin-top:10px;">
+              Goal: sustainable contribution without burnout, and without extracting anyone’s story.
+            </p>
+          </article>
+
+          <article class="card">
+            <h2 class="h2">Boundaries and safety</h2>
+            <ul class="list">
+              <li>No crisis-response or emergency service.</li>
+              <li>No legal representation; no clinical therapy delivery.</li>
+              <li>Privacy-first: avoid sensitive identifiers in first contact.</li>
+              <li>Consent-first storytelling: pattern-level outreach, identity-protected.</li>
+              <li>Clear scope protects participants, volunteers, and partners.</li>
+            </ul>
+            <p class="muted" style="font-size:12px;margin-top:10px;">
+              Policies: <a href="/privacy/" style="text-decoration:underline;">Privacy</a> • <a href="/scope/" style="text-decoration:underline;">Scope</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- OPTIONAL: quick expandable summary -->
+      <section class="section">
+        <details>
+          <summary>
+            <div class="summary-row">
+              <div>
+                <div class="kicker">Optional</div>
+                <div class="h3" style="margin:2px 0 0;">Prefer a single email instead of choosing a role?</div>
+                <div class="muted" style="font-size:12px;margin-top:4px;">Use the quick form to prepare a structured email (no data submission).</div>
               </div>
+              <div class="caret">▾</div>
+            </div>
+          </summary>
 
-              <div class="panel">
-                <h2>What we don’t do</h2>
-                <ul class="ul">
-                  <li>Emergency or crisis response.</li>
-                  <li>Clinical therapy or medical services.</li>
-                  <li>Legal representation or formal case management.</li>
-                </ul>
-                <div class="pills">
-                  <span class="pill">Privacy-first</span>
-                  <span class="pill">Scope clarity</span>
-                  <span class="pill">Practical outputs</span>
+          <div style="margin-top:12px;">
+            <div class="grid cards" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr));">
+              <article class="card soft">
+                <h2 class="h2">Email-first (recommended)</h2>
+                <p class="muted" style="font-size:13px;">
+                  Email: <a href="mailto:contact@the777foundation.org" style="text-decoration:underline;">contact@the777foundation.org</a><br/>
+                  Please avoid full names, addresses, employer identifiers, or case-specific details in the first message.
+                </p>
+                <div class="actions">
+                  <a class="btn btn-primary" href="mailto:contact@the777foundation.org?subject=Volunteer%20%2F%20Collaboration%20%E2%80%93%20The%20777%20Foundation%20Society">Email the Society</a>
+                  <a class="btn btn-outline" href="/contact/">Contact page</a>
                 </div>
-              </div>
+              </article>
+
+              <aside class="card soft" id="interest">
+                <h2 class="h2">Quick form (prepares an email)</h2>
+                <p class="muted" style="font-size:12px;margin-bottom:10px;">
+                  This does not submit data. It opens your email client with structured text.
+                </p>
+
+                <form id="interest-form">
+                  <div class="form-row">
+                    <div class="field">
+                      <label class="kicker" for="f_name">Name (optional)</label>
+                      <input class="input" id="f_name" type="text" placeholder="First name only is fine" />
+                    </div>
+
+                    <div class="field">
+                      <label class="kicker" for="f_location">Location</label>
+                      <input class="input" id="f_location" type="text" placeholder="e.g., Vancouver, BC (or remote)" />
+                    </div>
+
+                    <div class="field full">
+                      <label class="kicker" for="f_role">Preferred role</label>
+                      <select class="select" id="f_role">
+                        <option value="Funding & Partnerships Lead">Funding & Partnerships Lead</option>
+                        <option value="Legal, Policy & Advocacy Ally">Legal, Policy & Advocacy Ally</option>
+                        <option value="Mental Health & Social Service Ally">Mental Health & Social Service Ally</option>
+                        <option value="Outreach, Design & Storytelling">Outreach, Design & Storytelling</option>
+                        <option value="Operations & Governance Support">Operations & Governance Support</option>
+                        <option value="Not sure / routing help">Not sure / routing help</option>
+                      </select>
+                    </div>
+
+                    <div class="field">
+                      <label class="kicker" for="f_availability">Availability</label>
+                      <input class="input" id="f_availability" type="text" placeholder="e.g., ~3 hours/month for 6 months" />
+                    </div>
+
+                    <div class="field">
+                      <label class="kicker" for="f_profile">LinkedIn / CV link (optional)</label>
+                      <input class="input" id="f_profile" type="text" placeholder="Paste URL" />
+                    </div>
+
+                    <div class="field full">
+                      <label class="kicker" for="f_note">Short note</label>
+                      <textarea class="textarea" id="f_note" placeholder="Why this matters + how you can help (no sensitive identifiers)"></textarea>
+                    </div>
+
+                    <div class="field full">
+                      <button class="btn btn-primary" type="submit">Prepare email</button>
+                      <a class="btn btn-outline" href="/privacy/" style="margin-left:8px;">Privacy</a>
+                    </div>
+                  </div>
+                </form>
+
+                <p class="muted" style="font-size:11px;margin-top:10px;">
+                  If there is a fit, next steps and scope will be shared.
+                </p>
+              </aside>
             </div>
           </div>
-
-          <aside class="panel">
-            <div class="tag">Quick routes</div>
-            <table class="table" style="margin-top:10px">
-              <tr><th>Need</th><th>Go to</th></tr>
-              <tr><td>Participation</td><td><a class="link" href="/programs/">Programs</a></td></tr>
-              <tr><td>Volunteer roles</td><td><a class="link" href="/get-involved/">Get involved</a></td></tr>
-              <tr><td>Funding / donations</td><td><a class="link" href="/donate/">Donate</a></td></tr>
-              <tr><td>Boundaries</td><td><a class="link" href="/scope/">Scope</a></td></tr>
-              <tr><td>Contact</td><td><a class="link" href="/contact/">Contact</a></td></tr>
-            </table>
-            <hr class="sep" />
-            <p class="note">Email-first contact to protect privacy. Avoid identifying details in your first message.</p>
-          </aside>
-        </div>
+        </details>
       </section>
+    </div>
+  </main>
 
-      <section class="section--sm">
-        <div class="container">
-          <div class="grid3">
-            <div class="card">
-              <div class="tag">Process</div>
-              <div class="ctitle">Navigation with clarity</div>
-              <div class="cbody">Organize timelines, documents, and options so interactions with institutions and workplaces become clearer and better supported.</div>
-            </div>
-            <div class="card">
-              <div class="tag">Safety</div>
-              <div class="ctitle">Boundaries and safeguarding</div>
-              <div class="cbody">Facilitated cohorts with consent language, scope limits, and clear escalation options where appropriate.</div>
-            </div>
-            <div class="card">
-              <div class="tag">Impact</div>
-              <div class="ctitle">Practical outputs</div>
-              <div class="cbody">Clear next steps, readiness checklists, and referral pathways—measurable, realistic, and privacy-aware.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  <!-- Footer injected by /assets/777-shell.js -->
+  <div id="site-footer"></div>
 
-    <div id="site-footer"></div>
-  </div>
+  <script src="/assets/777-shell.js?v=2025-12-15"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("interest-form");
+      if (!form) return;
 
-  <script src="/assets/777-shell.js"></script>
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var name = (document.getElementById("f_name").value || "").trim();
+        var location = (document.getElementById("f_location").value || "").trim();
+        var role = (document.getElementById("f_role").value || "").trim();
+        var availability = (document.getElementById("f_availability").value || "").trim();
+        var profile = (document.getElementById("f_profile").value || "").trim();
+        var note = (document.getElementById("f_note").value || "").trim();
+
+        var subject = "Volunteer / collaboration – " + (role || "Enquiry") + (name ? " (" + name + ")" : "");
+        var body = [];
+
+        if (name) body.push("Name: " + name);
+        if (location) body.push("Location: " + location);
+        body.push("Preferred role: " + (role || "Not sure"));
+        if (profile) body.push("LinkedIn / CV: " + profile);
+        if (availability) body.push("Availability: " + availability);
+
+        if (note) body.push("\nNote:\n" + note);
+
+        body.push("\n(Please avoid full names, addresses, employer identifiers, or case-specific details in the first message.)");
+
+        window.location.href =
+          "mailto:contact@the777foundation.org" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body.join("\n"));
+      });
+    })();
+  </script>
 </body>
 </html>
