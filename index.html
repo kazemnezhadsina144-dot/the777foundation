@@ -1,307 +1,122 @@
-<!-- /index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>The 777 Foundation Society | Survivor-led support for dignity and justice</title>
-  <meta name="description" content="The 777 Foundation Society is a survivor-led, trauma-informed non-profit in British Columbia. We build peer-led support networks, advocacy orientation, emotional resilience practices, and privacy-first outreach for newcomers and marginalized workers." />
-
+  <title>The 777 Foundation Society – Survivor-led support in BC</title>
+  <meta name="description" content="Grassroots, survivor-led non-profit in British Columbia. Trauma-informed peer-led cohorts, rights navigation, resilience tools, and community outreach." />
   <link rel="canonical" href="https://www.the777foundation.org/" />
-  <meta property="og:title" content="The 777 Foundation Society | Survivor-led support for dignity and justice" />
-  <meta property="og:description" content="Grassroots, survivor-led non-profit in BC. Peer-led support, advocacy orientation (not legal representation), resilience practices, and privacy-first outreach." />
+
+  <meta property="og:site_name" content="The 777 Foundation Society" />
+  <meta property="og:title" content="The 777 Foundation Society – Survivor-led support in BC" />
+  <meta property="og:description" content="Trauma-informed peer-led cohorts, rights navigation, resilience tools, and community outreach (pilot phase)." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.the777foundation.org/" />
   <meta property="og:image" content="https://www.the777foundation.org/assets/og/og-777.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="manifest" href="/assets/site.webmanifest" />
   <meta name="theme-color" content="#050814" />
-
+  <link rel="manifest" href="/assets/site.webmanifest" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/favicon-512.png" />
-
-  <link rel="stylesheet" href="/assets/777-shell.css?v=2025-12-15" />
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"The 777 Foundation Society",
-    "url":"https://www.the777foundation.org/",
-    "logo":"https://www.the777foundation.org/assets/og/og-777.png",
-    "email":"contact@the777foundation.org",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Vancouver",
-      "addressRegion":"BC",
-      "addressCountry":"CA"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"The 777 Foundation Society",
-    "url":"https://www.the777foundation.org/"
-  }
-  </script>
-
-  <style>
-    /* Page-only (minimal; relies on 777-shell.css for global tokens/layout) */
-    .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
-    .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,rgba(255,255,255,.70))}
-    .muted{color:var(--muted,rgba(255,255,255,.70))}
-    .h1{margin:8px 0 10px;font-size:clamp(30px,4.2vw,46px);line-height:1.08}
-    .h2{font-size:18px;margin:0 0 8px}
-    .h3{font-size:15px;margin:0 0 8px}
-    .section{padding:18px 0}
-    .grid{display:grid;gap:14px}
-
-    .card{background:var(--card,rgba(16,20,38,.90));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px}
-    .card.soft{background:rgba(255,255,255,.015)}
-    .cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .pill{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);color:var(--muted,rgba(255,255,255,.70))}
-
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid transparent;text-decoration:none;cursor:pointer;font-size:13px;white-space:nowrap}
-    .btn-primary{background:linear-gradient(135deg,#f5c153,#f0a72a);color:#1a1307;font-weight:650;box-shadow:0 12px 30px rgba(245,193,83,.35)}
-    .btn-outline{border-color:rgba(255,255,255,.12);background:rgba(10,14,32,.75);color:rgba(255,255,255,.78)}
-    .btn-outline:hover{border-color:rgba(255,255,255,.22)}
-    .btn-link{border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:rgba(255,255,255,.86)}
-
-    .hero{padding:18px 0 6px}
-    .lede{max-width:920px;font-size:14px;line-height:1.6}
-    .heroGrid{display:grid;gap:14px;grid-template-columns:1.15fr .85fr;align-items:stretch;margin-top:14px}
-    .heroPanel{border-radius:22px;overflow:hidden;position:relative}
-    .heroPanel::before{
-      content:"";
-      position:absolute;inset:-40%;
-      background:
-        radial-gradient(circle at 0 0, rgba(245,193,83,.14), transparent 56%),
-        radial-gradient(circle at 100% 100%, rgba(86,205,255,.12), transparent 56%);
-      opacity:.75;pointer-events:none
-    }
-    .heroPanelInner{position:relative}
-    .statrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .stat{display:inline-flex;gap:8px;align-items:center;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(5,8,20,.70);font-size:12px;color:var(--muted,rgba(255,255,255,.70))}
-    .stat b{color:rgba(245,193,83,.95);font-weight:700}
-
-    .list{margin:0;padding-left:18px;color:var(--muted,rgba(255,255,255,.72))}
-    .list li{margin:6px 0}
-
-    .ctaBar{
-      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;
-      padding:14px;border-radius:18px;border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-    }
-
-    @media (max-width:980px){
-      .heroGrid{grid-template-columns:1fr}
-      .btn{white-space:normal}
-    }
-  </style>
+  <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon-192.png" />
+  <link rel="stylesheet" href="/assets/777-shell.css" />
 </head>
-
 <body>
-  <!-- Header injected by /assets/777-shell.js -->
-  <div id="site-header" data-active="/"></div>
+  <div class="page">
+    <div id="site-header"></div>
 
-  <main class="section">
-    <div class="wrap">
-      <!-- HERO -->
-      <section class="hero">
-        <div class="kicker">Survivor-led non-profit • British Columbia</div>
-        <h1 class="h1">
-          A grassroots foundation for <span style="color:rgba(245,193,83,.95)">dignity and justice</span>
-          in the lives of newcomers and marginalized workers.
-        </h1>
-        <p class="muted lede">
-          The 777 Foundation Society is a survivor-led, trauma-informed non-profit in British Columbia.
-          We build peer-led support networks, advocacy orientation (not legal representation), emotional resilience practices,
-          and privacy-first outreach for people navigating vulnerable transitions and systemic mistreatment.
-        </p>
+    <main id="main">
+      <section class="section">
+        <div class="container hero">
+          <div>
+            <div class="kicker"><span class="kdot"></span><span>Survivor-led · trauma-informed · BC</span></div>
+            <h1>A grassroots foundation for <span style="color:var(--gold)">dignity, safety, and justice</span>.</h1>
+            <p class="lead">
+              We support newcomers and marginalized workers through structured peer cohorts, rights navigation readiness,
+              resilience tools, and de-identified community outreach. Pilot phase now—building capacity for 2026.
+            </p>
 
-        <div class="pillrow">
-          <span class="pill">Peer-led support</span>
-          <span class="pill">Advocacy orientation</span>
-          <span class="pill">Resilience practices</span>
-          <span class="pill">Privacy-first outreach</span>
-          <span class="pill">BC-focused • Remote-friendly</span>
-        </div>
+            <div class="nav__actions" style="margin-top:14px">
+              <a class="btn btn--primary" href="/programs/">View programs</a>
+              <a class="btn btn--ghost" href="/get-involved/">Volunteer / collaborate</a>
+              <a class="btn btn--ghost" href="/donate/">Funding</a>
+            </div>
 
-        <div class="actions">
-          <a class="btn btn-primary" href="/get-involved/">Get involved</a>
-          <a class="btn btn-outline" href="/donate/">Donate / fund programs</a>
-          <a class="btn btn-outline" href="/programs/">Program streams</a>
-          <a class="btn btn-outline" href="/contact/">Contact</a>
-        </div>
+            <p class="note">
+              We do not provide legal representation or clinical therapy. If you are in immediate danger, contact emergency services first.
+            </p>
 
-        <div class="heroGrid">
-          <article class="card heroPanel">
-            <div class="heroPanelInner">
-              <div class="kicker">What we do</div>
-              <h2 class="h2" style="margin-top:6px;">Structured support that reduces isolation and improves readiness</h2>
-              <ul class="list">
-                <li>Peer-led groups designed for safety, boundaries, and practical next steps.</li>
-                <li>Plain-language system literacy and documentation readiness support.</li>
-                <li>Resilience practices coordinated with existing community resources.</li>
-                <li>Outreach that highlights patterns while protecting identities and consent.</li>
-              </ul>
-
-              <div class="statrow">
-                <span class="stat"><b>4</b> program streams</span>
-                <span class="stat"><b>BC</b> focus</span>
-                <span class="stat"><b>Privacy</b> first</span>
+            <div class="split section--sm">
+              <div class="panel">
+                <h2>What we do</h2>
+                <ul class="ul">
+                  <li>Facilitated peer cohorts with clear boundaries.</li>
+                  <li>Rights navigation & documentation readiness (not legal advice).</li>
+                  <li>Resilience tools to reduce isolation and burnout.</li>
+                  <li>Safe referral pathways, with consent.</li>
+                </ul>
               </div>
 
-              <p class="muted" style="font-size:12px;margin-top:10px;">
-                Note: Not an emergency or crisis service. In immediate danger or acute distress, contact emergency services first.
-              </p>
-            </div>
-          </article>
-
-          <aside class="card heroPanel soft">
-            <div class="heroPanelInner">
-              <div class="kicker">Current phase</div>
-              <h2 class="h2" style="margin-top:6px;">Pilot + capacity-building</h2>
-              <p class="muted" style="font-size:13px;">
-                Focus is building stable governance, program architecture, and funding pathways.
-                Public-facing program expansion begins once core infrastructure is in place.
-              </p>
-
-              <div class="card soft" style="margin-top:12px;">
-                <div class="kicker">Fast pathways</div>
-                <div class="grid" style="gap:10px;margin-top:10px;">
-                  <a class="btn btn-primary" href="/get-involved/funding-partnerships-lead/" style="width:max-content;">Funding & partnerships role</a>
-                  <a class="btn btn-link" href="/governance/" style="width:max-content;">Governance overview</a>
-                  <a class="btn btn-link" href="/scope/" style="width:max-content;">Scope & limitations</a>
-                  <a class="btn btn-link" href="/privacy/" style="width:max-content;">Privacy</a>
+              <div class="panel">
+                <h2>What we don’t do</h2>
+                <ul class="ul">
+                  <li>Emergency/crisis response.</li>
+                  <li>Clinical therapy or medical services.</li>
+                  <li>Legal representation or case management.</li>
+                </ul>
+                <div class="pills">
+                  <span class="pill">Privacy-first</span>
+                  <span class="pill">Scope clarity</span>
+                  <span class="pill">Outcome-oriented</span>
                 </div>
               </div>
             </div>
+          </div>
+
+          <aside class="panel">
+            <div class="tag">Quick routes</div>
+            <table class="table" style="margin-top:10px">
+              <tr><th>Need</th><th>Go to</th></tr>
+              <tr><td>Participation</td><td><a class="link" href="/programs/">Programs</a></td></tr>
+              <tr><td>Volunteer roles</td><td><a class="link" href="/get-involved/">Get involved</a></td></tr>
+              <tr><td>Funding / grants</td><td><a class="link" href="/donate/">Donate</a></td></tr>
+              <tr><td>Boundaries</td><td><a class="link" href="/scope/">Scope</a></td></tr>
+              <tr><td>Contact</td><td><a class="link" href="/contact/">Contact</a></td></tr>
+            </table>
+            <hr class="sep" />
+            <p class="note">Email-first contact to protect privacy. Avoid identifying details in your first message.</p>
           </aside>
         </div>
       </section>
 
-      <!-- PROGRAM STREAMS (preview) -->
-      <section class="section" aria-label="Program streams">
-        <div class="grid" style="gap:8px;margin-bottom:10px;">
-          <h2 class="h2">Program streams</h2>
-          <p class="muted" style="font-size:13px;max-width:920px;">
-            The Society’s work is organized into four connected streams designed to stabilize, inform, and support safe next steps.
-          </p>
-        </div>
-
-        <div class="grid cards">
-          <article class="card">
-            <div class="kicker">Stream 1</div>
-            <h3 class="h3">Peer-led Programs</h3>
-            <p class="muted" style="font-size:13px;">
-              Facilitated peer-led groups with clear boundaries, safety practices, and practical guidance.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="kicker">Stream 2</div>
-            <h3 class="h3">Advocacy Orientation</h3>
-            <p class="muted" style="font-size:13px;">
-              Documentation readiness and system navigation support for engaging formal processes (not legal representation).
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="kicker">Stream 3</div>
-            <h3 class="h3">Emotional Resilience</h3>
-            <p class="muted" style="font-size:13px;">
-              Simple resilience practices and tools to reduce isolation and strengthen coping capacity.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="kicker">Stream 4</div>
-            <h3 class="h3">Community Outreach</h3>
-            <p class="muted" style="font-size:13px;">
-              Privacy-first education and awareness initiatives focused on patterns, not exposure of individuals.
-            </p>
-          </article>
-        </div>
-
-        <div class="actions">
-          <a class="btn btn-outline" href="/programs/">View full programs page</a>
-        </div>
-      </section>
-
-      <!-- TRUST / GOVERNANCE / SCOPE (preview) -->
-      <section class="section" aria-label="Governance and scope">
-        <div class="grid cards" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
-          <article class="card">
-            <div class="kicker">Clarity</div>
-            <h2 class="h2">Scope & limitations</h2>
-            <ul class="list">
-              <li>No crisis-response or emergency service.</li>
-              <li>No legal representation; no clinical therapy delivery.</li>
-              <li>Support focuses on readiness, navigation, and safe referrals.</li>
-            </ul>
-            <div class="actions">
-              <a class="btn btn-link" href="/scope/">Read scope</a>
+      <section class="section--sm">
+        <div class="container">
+          <div class="grid3">
+            <div class="card">
+              <div class="tag">Process</div>
+              <div class="ctitle">Navigation, not noise</div>
+              <div class="cbody">Organize timelines, documents, and options so system interactions become safer and clearer.</div>
             </div>
-          </article>
-
-          <article class="card">
-            <div class="kicker">Trust</div>
-            <h2 class="h2">Governance & accountability</h2>
-            <p class="muted" style="font-size:13px;">
-              The Society is governed by a volunteer board and is committed to clear policies and practical reporting.
-            </p>
-            <div class="actions">
-              <a class="btn btn-link" href="/governance/">Governance page</a>
+            <div class="card">
+              <div class="tag">Safety</div>
+              <div class="ctitle">Boundaries and safeguarding</div>
+              <div class="cbody">Facilitated groups with consent language, scope limits, and escalation pathways.</div>
             </div>
-          </article>
-
-          <article class="card">
-            <div class="kicker">Safety</div>
-            <h2 class="h2">Privacy-first by design</h2>
-            <p class="muted" style="font-size:13px;">
-              Early contact and participation are designed to reduce risk. Avoid sensitive identifiers in first messages.
-            </p>
-            <div class="actions">
-              <a class="btn btn-link" href="/privacy/">Privacy policy</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CTA BAR -->
-      <section class="section" aria-label="Call to action">
-        <div class="ctaBar">
-          <div style="min-width:260px;">
-            <div class="kicker">Next step</div>
-            <div style="font-size:14px;margin-top:6px;">
-              Explore roles, partnerships, or funding pathways.
-            </div>
-            <div class="muted" style="font-size:12px;margin-top:6px;">
-              Email-first routing for privacy and appropriate handling.
+            <div class="card">
+              <div class="tag">Impact</div>
+              <div class="ctitle">Practical outputs</div>
+              <div class="cbody">Clear next steps, readiness checklists, and referral pathways—measurable and realistic.</div>
             </div>
           </div>
-          <div class="actions" style="margin-top:0;">
-            <a class="btn btn-primary" href="/get-involved/">Get involved</a>
-            <a class="btn btn-outline" href="/donate/">Donate</a>
-            <a class="btn btn-outline" href="/contact/">Contact</a>
-          </div>
         </div>
       </section>
-    </div>
-  </main>
+    </main>
 
-  <!-- Footer injected by /assets/777-shell.js -->
-  <div id="site-footer"></div>
+    <div id="site-footer"></div>
+  </div>
 
-  <script src="/assets/777-shell.js?v=2025-12-15"></script>
+  <script src="/assets/777-shell.js"></script>
 </body>
 </html>
